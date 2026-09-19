@@ -23,7 +23,7 @@ function ImpressumPage() {
       <div><h2 className="font-display text-xl font-extrabold">Registereintrag</h2><p className="mt-2 text-muted-foreground">Handelsregister: HRB 107712<br />Registergericht: Amtsgericht Düsseldorf</p></div>
       <div><h2 className="font-display text-xl font-extrabold">Umsatzsteuer-ID</h2><p className="mt-2 text-muted-foreground">Umsatzsteuer-Identifikationsnummer: DE163919849</p></div>
       <div><h2 className="font-display text-xl font-extrabold">Verbraucherstreitbeilegung</h2><p className="mt-2 text-muted-foreground">Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p></div>
-      <p className="mt-10 border-l-2 border-brand-gold pl-5 text-sm text-muted-foreground">Hinweis: Dieser Text ist ein allgemeiner Entwurf und ersetzt keine rechtliche Prüfung.</p>
+      <p className="mt-10 border-l-2 border-primary pl-5 text-sm text-muted-foreground">Hinweis: Dieser Text ist ein allgemeiner Entwurf und ersetzt keine rechtliche Prüfung.</p>
     </div></section>
   </>;
 }
