@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight, Mail, Menu, Phone } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Mail, Menu, Phone } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -21,13 +21,13 @@ const navItems = [
 
 export function Brand() {
   return (
-    <Link to="/" className="group inline-flex items-center gap-3" aria-label="Denaro Consulting Startseite">
-      <span className="grid size-10 place-items-center bg-primary font-display text-lg font-extrabold text-primary-foreground transition-colors group-hover:bg-brand-gold">
-        D
+    <Link to="/" className="group inline-flex items-center gap-3.5" aria-label="Denaro Consulting Startseite">
+      <span className="relative grid size-11 place-items-center overflow-hidden bg-brand-ink font-display text-lg font-semibold text-primary-foreground">
+        <span className="absolute right-0 top-0 h-1 w-5 bg-brand-gold" />D
       </span>
       <span className="leading-none">
-        <span className="block font-display text-lg font-extrabold text-foreground">DENARO</span>
-        <span className="mt-1 block text-[0.65rem] font-bold tracking-[0.18em] text-muted-foreground">CONSULTING</span>
+        <span className="block font-display text-lg font-semibold text-foreground">DENARO</span>
+        <span className="mt-1.5 block text-[0.61rem] font-semibold tracking-[0.2em] text-muted-foreground">CONSULTING</span>
       </span>
     </Link>
   );
@@ -35,32 +35,32 @@ export function Brand() {
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-border/80 bg-background/95 backdrop-blur-md">
-      <div className="site-container flex h-20 items-center justify-between">
+    <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur-md">
+      <div className="site-container flex h-24 items-center justify-between">
         <Brand />
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Hauptnavigation">
+        <nav className="hidden items-center gap-9 lg:flex" aria-label="Hauptnavigation">
           {navItems.map((item) => (
             <Link
               key={item.to}
               to={item.to}
-              className="text-sm font-bold text-muted-foreground transition-colors hover:text-primary"
+              className="relative py-9 text-xs font-semibold uppercase text-muted-foreground transition-colors after:absolute after:bottom-6 after:left-0 after:h-0.5 after:w-0 after:bg-brand-gold after:transition-all hover:text-foreground hover:after:w-full"
               activeProps={{ className: "text-primary" }}
               activeOptions={{ exact: item.to === "/" }}
             >
               {item.label}
             </Link>
           ))}
-          <Button asChild size="lg" className="rounded-none px-6">
-            <a href="tel:+4921187971210"><Phone /> 0211 87971210</a>
+          <Button asChild size="lg" className="h-12 rounded-none bg-brand-gold px-7 text-brand-night shadow-none hover:bg-brand-gold/85">
+            <Link to="/kontakt">Kontakt <ArrowUpRight /></Link>
           </Button>
         </nav>
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Menü öffnen">
+            <Button variant="ghost" size="icon" className="size-11 rounded-none lg:hidden" aria-label="Menü öffnen">
               <Menu className="size-5" />
             </Button>
           </SheetTrigger>
-          <SheetContent className="w-[88vw] rounded-none border-l-border p-8">
+            <SheetContent className="w-[90vw] rounded-none border-l-border bg-background p-8">
             <SheetHeader className="text-left">
               <SheetTitle><Brand /></SheetTitle>
               <SheetDescription className="pt-3">Beratung, Technologie und Architektur aus Düsseldorf.</SheetDescription>
@@ -87,16 +87,16 @@ export function SiteHeader() {
 
 export function ContactBand() {
   return (
-    <section className="bg-primary text-primary-foreground">
-      <div className="site-container grid gap-8 py-16 md:grid-cols-[1fr_auto] md:items-end md:py-20">
+    <section className="line-pattern relative overflow-hidden bg-brand-ink text-primary-foreground">
+      <div className="site-container relative grid gap-10 py-20 md:grid-cols-[1fr_auto] md:items-end md:py-28">
         <div>
-          <p className="eyebrow text-brand-gold">Im Dialog beginnt Fortschritt</p>
-          <h2 className="mt-4 max-w-3xl font-display text-4xl font-extrabold leading-tight md:text-5xl">
-            Lassen Sie uns über Ihr nächstes Vorhaben sprechen.
+          <p className="eyebrow text-brand-gold">Der nächste Schritt</p>
+          <h2 className="mt-5 max-w-3xl font-display text-4xl font-semibold leading-[1.08] md:text-6xl">
+            Aus einer komplexen Aufgabe wird ein <span className="editorial text-brand-steel">klarer Weg.</span>
           </h2>
         </div>
-        <Button asChild size="lg" className="h-13 rounded-none bg-brand-gold px-7 text-brand-ink shadow-none hover:bg-brand-gold/90">
-          <Link to="/kontakt">Kontakt aufnehmen <ArrowUpRight /></Link>
+        <Button asChild size="lg" className="h-14 rounded-none bg-brand-gold px-8 text-brand-night shadow-none hover:bg-primary-foreground">
+          <Link to="/kontakt">Gespräch beginnen <ArrowUpRight /></Link>
         </Button>
       </div>
     </section>
@@ -105,22 +105,22 @@ export function ContactBand() {
 
 export function SiteFooter() {
   return (
-    <footer className="bg-brand-ink text-primary-foreground">
-      <div className="site-container grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">
+    <footer className="bg-brand-night text-primary-foreground">
+      <div className="site-container grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_0.8fr] lg:py-20">
         <div>
-          <p className="font-display text-2xl font-extrabold">DENARO CONSULTING</p>
+          <p className="font-display text-2xl font-semibold">DENARO <span className="editorial text-brand-steel">Consulting</span></p>
           <p className="mt-4 max-w-sm text-sm leading-7 text-primary-foreground/70">
             Unternehmensberatung, Informationstechnologie und Architektur mit klarer Perspektive und verlässlicher Umsetzung.
           </p>
         </div>
         <div className="text-sm leading-7">
-          <p className="font-bold text-brand-gold">Kontakt</p>
+          <p className="eyebrow text-brand-gold">Kontakt</p>
           <p className="mt-3 text-primary-foreground/70">Mettlacher Straße 10<br />40468 Düsseldorf</p>
           <a className="mt-2 block hover:text-brand-gold" href="tel:+4921187971210">0211 87971210</a>
           <a className="hover:text-brand-gold" href="mailto:kontakt@denaro-consult.com">kontakt@denaro-consult.com</a>
         </div>
         <div className="text-sm leading-8">
-          <p className="font-bold text-brand-gold">Navigation</p>
+          <p className="eyebrow text-brand-gold">Navigation</p>
           <div className="mt-3 flex flex-col items-start text-primary-foreground/70">
             <Link to="/leistungen" className="hover:text-brand-gold">Leistungen</Link>
             <Link to="/ueber-uns" className="hover:text-brand-gold">Über uns</Link>
@@ -130,8 +130,8 @@ export function SiteFooter() {
           </div>
         </div>
       </div>
-      <div className="border-t border-primary-foreground/10">
-        <div className="site-container py-5 text-xs text-primary-foreground/50">© 2026 Denaro Consulting GmbH</div>
+       <div className="border-t border-primary-foreground/10">
+         <div className="site-container flex flex-col gap-3 py-6 text-xs text-primary-foreground/50 sm:flex-row sm:items-center sm:justify-between"><span>© 2026 Denaro Consulting GmbH</span><span className="flex items-center gap-2 text-brand-gold">Düsseldorf <ArrowRight className="size-3" /></span></div>
       </div>
     </footer>
   );

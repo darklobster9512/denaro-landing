@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight, Check } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
 
-import heroImage from "@/assets/denaro-duesseldorf-office.jpg";
-import teamImage from "@/assets/denaro-consulting-team.jpg";
+import heroImage from "@/assets/denaro-boardroom-editorial.jpg";
+import architectureImage from "@/assets/denaro-architecture-editorial.jpg";
 import { ContactBand } from "@/components/site-shell";
 import { ServicesGrid, TextLink } from "@/components/page-sections";
 import { Button } from "@/components/ui/button";
@@ -19,48 +19,66 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return <>
-    <section className="relative min-h-[calc(100svh-5rem)] overflow-hidden bg-brand-ink text-primary-foreground md:min-h-[44rem]">
-      <img src={heroImage} alt="Moderner Wirtschaftsstandort am Düsseldorfer Rhein" width={1600} height={1008} className="absolute inset-0 size-full object-cover object-center" fetchPriority="high" />
-      <div className="absolute inset-0 bg-brand-ink/65 md:bg-gradient-to-r md:from-brand-ink/95 md:via-brand-ink/65 md:to-brand-ink/15" />
-      <div className="site-container relative flex min-h-[calc(100svh-5rem)] flex-col justify-center py-20 md:min-h-[44rem]">
-        <div className="reveal max-w-3xl">
-          <p className="eyebrow text-brand-gold">Denaro Consulting · Düsseldorf</p>
-          <h1 className="mt-6 font-display text-5xl font-extrabold leading-[1.03] md:text-7xl lg:text-8xl">Klarheit für komplexe Vorhaben.</h1>
-          <p className="mt-7 max-w-xl text-lg leading-8 text-primary-foreground/80 md:text-xl">Wir verbinden unternehmerisches Denken, technologische Kompetenz und planerische Perspektive.</p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <Button asChild size="lg" className="h-13 rounded-none bg-brand-gold px-7 text-brand-ink shadow-none hover:bg-brand-gold/90"><Link to="/leistungen">Leistungen entdecken <ArrowUpRight /></Link></Button>
-            <Button asChild size="lg" variant="outline" className="h-13 rounded-none border-primary-foreground/45 bg-transparent px-7 text-primary-foreground hover:bg-primary-foreground hover:text-brand-ink"><Link to="/kontakt">Gespräch vereinbaren</Link></Button>
+    <section className="line-pattern relative overflow-hidden bg-brand-night text-primary-foreground">
+      <div className="site-container grid min-h-[47rem] gap-14 py-16 lg:grid-cols-12 lg:items-center lg:py-24">
+        <div className="reveal relative z-10 lg:col-span-6">
+          <p className="eyebrow flex items-center gap-4 text-brand-gold"><span className="h-px w-10 bg-brand-gold" />Denaro Consulting · Düsseldorf</p>
+          <h1 className="mt-8 font-display text-5xl font-semibold leading-[1.04] md:text-7xl lg:text-[5.2rem]">Klarheit für <span className="editorial text-brand-steel">komplexe</span> Vorhaben.</h1>
+          <p className="mt-8 max-w-xl text-lg leading-8 text-primary-foreground/68 md:text-xl">Unternehmerische Weitsicht, technologische Kompetenz und planerische Präzision — konsequent zusammengeführt.</p>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Button asChild size="lg" className="h-14 rounded-none bg-brand-gold px-8 text-brand-night shadow-none hover:bg-primary-foreground"><Link to="/kontakt">Erstgespräch vereinbaren <ArrowUpRight /></Link></Button>
+            <Button asChild size="lg" variant="outline" className="h-14 rounded-none border-primary-foreground/20 bg-transparent px-8 text-primary-foreground shadow-none hover:bg-primary-foreground/10 hover:text-primary-foreground"><Link to="/leistungen">Unsere Leistungen</Link></Button>
           </div>
         </div>
-        <ArrowDown className="absolute bottom-8 size-5 text-brand-gold" />
+        <div className="reveal-delay relative pb-10 lg:col-span-6 lg:pl-10">
+          <div className="absolute -right-6 -top-6 h-full w-full border border-primary-foreground/12" />
+          <div className="group relative aspect-[4/5] max-h-[36rem] overflow-hidden border border-primary-foreground/15">
+            <img src={heroImage} alt="Beratungsteam bei einer strategischen Besprechung in Düsseldorf" width={1600} height={1072} className="image-lift size-full object-cover" fetchPriority="high" />
+            <div className="absolute inset-0 bg-brand-ink/15" />
+          </div>
+          <div className="absolute bottom-0 left-0 max-w-xs border border-primary-foreground/10 bg-brand-ink/95 p-6 shadow-2xl lg:-left-6 lg:p-8">
+            <p className="editorial text-2xl text-primary-foreground">Drei Disziplinen.</p>
+            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-steel">Ein Anspruch an Qualität</p>
+            <div className="mt-5 h-px w-12 bg-brand-gold" />
+          </div>
+        </div>
+        <div className="absolute bottom-7 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 lg:flex"><span className="text-[0.6rem] uppercase tracking-[0.2em] text-brand-steel">Entdecken</span><ArrowDown className="size-4 text-brand-gold" /></div>
       </div>
     </section>
 
-    <section className="py-20 md:py-28">
+    <section className="py-24 md:py-32">
       <div className="site-container">
-        <div className="mb-12 grid gap-6 md:grid-cols-[0.8fr_1.2fr] md:items-end">
-          <div><p className="eyebrow text-primary">Unsere Kompetenzfelder</p><h2 className="mt-4 font-display text-4xl font-extrabold md:text-5xl">Drei Perspektiven. Ein Anspruch.</h2></div>
-          <p className="max-w-xl leading-8 text-muted-foreground md:justify-self-end">Komplexe Aufgaben brauchen mehr als eine Disziplin. Wir betrachten wirtschaftliche, digitale und bauliche Zusammenhänge gemeinsam.</p>
+        <div className="mb-14 grid gap-8 md:grid-cols-2 md:items-end">
+          <div><p className="eyebrow text-primary">Kompetenzfelder</p><h2 className="mt-5 font-display text-4xl font-semibold leading-tight md:text-6xl">Drei Perspektiven.<br/><span className="editorial text-brand-steel">Ein Anspruch.</span></h2></div>
+          <p className="max-w-xl text-lg leading-8 text-muted-foreground md:justify-self-end">Komplexe Aufgaben brauchen mehr als eine Disziplin. Wir betrachten wirtschaftliche, digitale und bauliche Zusammenhänge gemeinsam.</p>
         </div>
         <ServicesGrid />
-        <div className="mt-8"><TextLink to="/leistungen">Alle Leistungen im Überblick</TextLink></div>
+        <div className="mt-10"><TextLink to="/leistungen">Alle Leistungen im Überblick</TextLink></div>
       </div>
     </section>
 
-    <section className="bg-secondary py-20 md:py-28">
-      <div className="site-container grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-20">
-        <img src={teamImage} alt="Beratungsteam bei der gemeinsamen Projektarbeit" width={1408} height={1008} loading="lazy" className="aspect-[4/3] w-full object-cover" />
-        <div>
-          <p className="eyebrow text-primary">Unser Arbeitsprinzip</p>
-          <h2 className="mt-4 font-display text-4xl font-extrabold leading-tight md:text-5xl">Verstehen. Strukturieren. Umsetzen.</h2>
-          <p className="mt-6 leading-8 text-muted-foreground">Wir hören genau hin, stellen die richtigen Fragen und entwickeln Lösungen, die nicht nur auf dem Papier funktionieren. Dabei bleiben Verantwortlichkeiten, nächste Schritte und Ziele jederzeit transparent.</p>
-          <ul className="mt-8 space-y-4">
-            {["Persönliche und direkte Zusammenarbeit", "Interdisziplinärer Blick auf jedes Vorhaben", "Pragmatische Lösungen mit langfristigem Wert"].map((item) => <li key={item} className="flex items-center gap-3 font-semibold"><span className="grid size-6 place-items-center bg-brand-gold text-brand-ink"><Check className="size-4" /></span>{item}</li>)}
-          </ul>
+    <section className="bg-secondary py-24 md:py-32">
+      <div className="site-container grid gap-12 lg:grid-cols-12 lg:items-center">
+        <div className="group relative lg:col-span-6">
+          <div className="absolute -bottom-5 -left-5 h-full w-full border border-brand-steel/30" />
+          <img src={architectureImage} alt="Moderne Architektur als Ausdruck klarer Planung" width={1408} height={1056} loading="lazy" className="image-lift relative aspect-[4/3] w-full object-cover" />
+        </div>
+        <div className="lg:col-span-5 lg:col-start-8">
+          <p className="eyebrow text-primary">Über Denaro</p>
+          <h2 className="mt-5 font-display text-4xl font-semibold leading-tight md:text-5xl">Wir denken nicht in Silos, sondern in <span className="editorial text-brand-steel">Zusammenhängen.</span></h2>
+          <p className="mt-7 text-lg leading-8 text-muted-foreground">Wirtschaftliche Entscheidungen beeinflussen Systeme. Systeme prägen Prozesse. Projekte brauchen Struktur. Deshalb verbinden wir Perspektiven, die in der Praxis zusammengehören.</p>
           <div className="mt-9"><TextLink to="/ueber-uns">Mehr über Denaro Consulting</TextLink></div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-24 md:py-32">
+      <div className="site-container">
+        <div className="grid gap-10 border-b border-border pb-12 md:grid-cols-2 md:items-end"><div><p className="eyebrow text-primary">Unser Vorgehen</p><h2 className="mt-5 font-display text-4xl font-semibold md:text-6xl">Verstehen. Strukturieren. <span className="editorial text-brand-steel">Umsetzen.</span></h2></div><p className="max-w-xl text-lg leading-8 text-muted-foreground md:justify-self-end">Klare Verantwortlichkeiten, nachvollziehbare Entscheidungen und konkrete nächste Schritte bilden die Grundlage jeder Zusammenarbeit.</p></div>
+        <div className="grid md:grid-cols-3">
+          {[["01","Verstehen","Wir hören genau hin und schärfen Ausgangslage, Ziele und Rahmenbedingungen."],["02","Strukturieren","Wir machen Abhängigkeiten sichtbar und übersetzen Komplexität in belastbare Optionen."],["03","Umsetzen","Wir begleiten Entscheidungen konsequent bis zum wirksamen Ergebnis."]].map(([number,title,text]) => <article key={number} className="border-b border-border py-10 md:border-b-0 md:border-r md:px-9 md:first:pl-0 md:last:border-r-0"><span className="text-xs font-semibold text-brand-gold">{number}</span><h3 className="mt-8 text-2xl font-semibold">{title}</h3><p className="mt-4 leading-7 text-muted-foreground">{text}</p><ArrowRight className="mt-8 size-5 text-primary" /></article>)}
         </div>
       </div>
     </section>

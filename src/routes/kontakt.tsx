@@ -19,12 +19,12 @@ export const Route = createFileRoute("/kontakt")({
 function KontaktPage() {
   return <>
     <PageIntro eyebrow="Kontakt" title="Der direkte Weg zu uns." text="Sie haben eine konkrete Aufgabe oder möchten eine erste Einschätzung? Rufen Sie uns an oder schreiben Sie uns eine E-Mail." />
-    <section className="py-20 md:py-28">
+    <section className="py-24 md:py-32">
       <div className="site-container">
         <ContactDetails />
-        <div className="mt-14 grid gap-10 bg-secondary p-8 md:grid-cols-[1fr_auto] md:items-center md:p-12">
-          <div><p className="eyebrow text-primary">Unverbindlich anfragen</p><h2 className="mt-3 font-display text-3xl font-extrabold">Wie können wir Sie unterstützen?</h2><p className="mt-3 max-w-2xl leading-7 text-muted-foreground">Beschreiben Sie uns kurz Ihr Vorhaben. Wir melden uns persönlich bei Ihnen zurück.</p></div>
-          <Button asChild size="lg" className="h-13 rounded-none px-7"><a href="mailto:kontakt@denaro-consult.com?subject=Anfrage%20über%20die%20Website">E-Mail schreiben <ArrowUpRight /></a></Button>
+        <div className="line-pattern mt-16 grid gap-10 bg-brand-ink p-8 text-primary-foreground md:grid-cols-[1fr_auto] md:items-center md:p-14">
+          <div><p className="eyebrow text-brand-gold">Unverbindlich anfragen</p><h2 className="mt-5 font-display text-3xl font-semibold md:text-5xl">Wie können wir Sie <span className="editorial text-brand-steel">unterstützen?</span></h2><p className="mt-5 max-w-2xl leading-7 text-primary-foreground/65">Beschreiben Sie uns kurz Ihr Vorhaben. Wir melden uns persönlich bei Ihnen zurück.</p></div>
+          <Button asChild size="lg" className="h-14 rounded-none bg-brand-gold px-8 text-brand-night shadow-none hover:bg-primary-foreground"><a href="mailto:kontakt@denaro-consult.com?subject=Anfrage%20über%20die%20Website">E-Mail schreiben <ArrowUpRight /></a></Button>
         </div>
       </div>
     </section>

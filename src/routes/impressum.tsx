@@ -16,14 +16,14 @@ export const Route = createFileRoute("/impressum")({
 function ImpressumPage() {
   return <>
     <PageIntro eyebrow="Rechtliches" title="Impressum" text="Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)." />
-    <section className="py-16 md:py-24"><div className="site-container max-w-3xl space-y-10 leading-8">
+    <section className="py-20 md:py-28"><div className="site-container max-w-3xl space-y-0 border-t border-border leading-8 [&>div]:border-b [&>div]:border-border [&>div]:py-8">
       <div><h2 className="font-display text-2xl font-extrabold">Denaro Consulting GmbH</h2><p className="mt-3 text-muted-foreground">Mettlacher Straße 10<br />40468 Düsseldorf<br />Deutschland</p></div>
       <div><h2 className="font-display text-xl font-extrabold">Vertreten durch</h2><p className="mt-2 text-muted-foreground">Geschäftsführer: Alexander Valentino Denaro</p></div>
       <div><h2 className="font-display text-xl font-extrabold">Kontakt</h2><p className="mt-2 text-muted-foreground">Telefon: <a className="text-primary underline" href="tel:+4921187971210">0211 87971210</a><br />E-Mail: <a className="text-primary underline" href="mailto:kontakt@denaro-consult.com">kontakt@denaro-consult.com</a><br />Internet: denaro-consult.solutions</p></div>
       <div><h2 className="font-display text-xl font-extrabold">Registereintrag</h2><p className="mt-2 text-muted-foreground">Handelsregister: HRB 107712<br />Registergericht: Amtsgericht Düsseldorf</p></div>
       <div><h2 className="font-display text-xl font-extrabold">Umsatzsteuer-ID</h2><p className="mt-2 text-muted-foreground">Umsatzsteuer-Identifikationsnummer: DE163919849</p></div>
       <div><h2 className="font-display text-xl font-extrabold">Verbraucherstreitbeilegung</h2><p className="mt-2 text-muted-foreground">Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p></div>
-      <p className="border-l-4 border-brand-gold pl-5 text-sm text-muted-foreground">Hinweis: Dieser Text ist ein allgemeiner Entwurf und ersetzt keine rechtliche Prüfung.</p>
+      <p className="mt-10 border-l-2 border-brand-gold pl-5 text-sm text-muted-foreground">Hinweis: Dieser Text ist ein allgemeiner Entwurf und ersetzt keine rechtliche Prüfung.</p>
     </div></section>
   </>;
 }
