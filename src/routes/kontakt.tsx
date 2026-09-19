@@ -152,7 +152,7 @@ function ContactForm() {
             </p>
           </div>
           <DialogFooter className="px-8 pb-8 pt-6 md:px-10">
-            <Button onClick={() => setDialogOpen(false)} size="lg" className="h-12 w-full rounded-none px-10 shadow-none sm:w-auto">
+            <Button onClick={() => { setDialogOpen(false); formRef.current?.reset(); }} size="lg" className="h-12 w-full rounded-none px-10 shadow-none sm:w-auto">
               Schließen
             </Button>
           </DialogFooter>
