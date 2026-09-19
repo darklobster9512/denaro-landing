@@ -62,14 +62,14 @@ export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
   if (detailed) {
     return <div className="border-t border-border">
       {services.map(({ number, title, text, icon: Icon, image, detail }, index) => (
-        <article key={title} className="grid border-b border-border py-14 md:grid-cols-12 md:py-24">
-          <div className={`group relative overflow-hidden border-x border-border md:col-span-6 ${index % 2 ? "md:order-2" : ""}`}>
+        <article key={title} className="grid min-w-0 border-b border-border py-14 md:grid-cols-12 md:py-24">
+          <div className={`group relative min-w-0 overflow-hidden border-x border-border md:col-span-6 ${index % 2 ? "md:order-2" : ""}`}>
              <img src={image.url} alt="" width={1408} height={1056} loading="lazy" className="image-lift aspect-[4/3] size-full object-cover" />
              <span className="absolute left-0 top-0 bg-primary px-5 py-4 text-sm font-bold text-primary-foreground">{number}</span>
           </div>
-          <div className={`border-x border-t border-border p-8 md:col-span-6 md:self-stretch md:border-t-0 md:p-12 lg:p-14 ${index % 2 ? "md:order-1 md:border-r-0" : "md:border-l-0"}`}>
+          <div className={`min-w-0 border-x border-t border-border p-8 md:col-span-6 md:self-stretch md:border-t-0 md:p-12 lg:p-14 ${index % 2 ? "md:order-1 md:border-r-0" : "md:border-l-0"}`}>
             <div className="flex items-center justify-between"><span className="eyebrow text-primary">Kompetenzfeld {number}</span><Icon className="size-7 text-primary" strokeWidth={1.5} /></div>
-            <h2 className="mt-10 font-display text-3xl font-semibold md:text-5xl">{title}</h2>
+            <h2 className="mt-10 break-words font-display text-3xl font-semibold md:text-5xl">{title}</h2>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">{text}</p>
             <ul className="mt-10 border-t border-border">
               {detail.map((item, itemIndex) => <li key={item} className="grid grid-cols-[2.5rem_1fr] border-b border-border py-4 text-sm font-semibold"><span className="text-xs text-primary">0{itemIndex + 1}</span>{item}</li>)}
