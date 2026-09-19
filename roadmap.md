@@ -2,7 +2,7 @@
 
 - [x] Referenz und aktuellen Auftritt analysieren
 - [x] Enterprise-Designrichtung auswählen
-- [ ] Gemeinsames Designsystem, Navigation und Footer erneuern
-- [ ] Startseite editorial neu aufbauen
-- [ ] Leistungen, Über uns, Kontakt und Rechtliches angleichen
-- [ ] Desktop und Mobil vollständig prüfen
+- [x] Gemeinsames Designsystem, Navigation und Footer erneuern
+- [x] Startseite editorial neu aufbauen
+- [x] Leistungen, Über uns, Kontakt und Rechtliches angleichen
+- [x] Desktop und Mobil vollständig prüfen
