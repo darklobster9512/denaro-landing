@@ -45,7 +45,7 @@ export function PageIntro({ eyebrow, title, text, number = "01" }: { eyebrow: st
           </div>
           <div className="border-b border-border p-7 md:p-12 lg:col-span-6 lg:border-b-0 lg:border-r lg:p-14">
             <p className="eyebrow text-primary">{eyebrow}</p>
-            <h1 className="mt-7 max-w-4xl font-display text-5xl font-light leading-[1.02] md:text-7xl">{title}</h1>
+            <h1 className="mt-7 max-w-4xl break-words font-display text-4xl font-light leading-[1.02] sm:text-5xl md:text-7xl">{title}</h1>
           </div>
           <div className="flex flex-col justify-end p-7 md:p-10 lg:col-span-4">
             <span className="mb-8 h-0.5 w-12 bg-primary" />
