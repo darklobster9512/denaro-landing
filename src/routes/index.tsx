@@ -1,11 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowDown, ArrowRight, ArrowUpRight, Building2, Check, Cpu, LineChart } from "lucide-react";
 
-import heroImage from "@/assets/denaro-boardroom-editorial.jpg";
-import architectureImage from "@/assets/denaro-architecture-editorial.jpg";
-import itImage from "@/assets/denaro-it-consulting.jpg";
-import teamImage from "@/assets/denaro-consulting-team.jpg";
-import officeImage from "@/assets/denaro-duesseldorf-office.jpg";
+import heroImage from "@/assets/denaro-boardroom-stock.jpg.asset.json";
+import architectureImage from "@/assets/denaro-architecture-stock.jpg.asset.json";
+import itImage from "@/assets/denaro-it-stock.jpg.asset.json";
+import teamImage from "@/assets/denaro-team-stock.jpg.asset.json";
+import officeImage from "@/assets/denaro-duesseldorf-stock.jpg.asset.json";
 import { ContactBand } from "@/components/site-shell";
 import { TextLink } from "@/components/page-sections";
 import { Button } from "@/components/ui/button";
@@ -37,7 +37,7 @@ function Index() {
         </div>
         <div className="reveal-delay flex min-h-[34rem] flex-col lg:col-span-5">
           <div className="group relative min-h-[27rem] flex-1 overflow-hidden">
-            <img src={heroImage} alt="Beratungsteam bei einer strategischen Besprechung in Düsseldorf" width={1600} height={1072} className="image-lift absolute inset-0 size-full object-cover" fetchPriority="high" />
+            <img src={heroImage.url} alt="Beratungsteam bei einer strategischen Besprechung in Düsseldorf" width={1600} height={1072} className="image-lift absolute inset-0 size-full object-cover" fetchPriority="high" />
             <div className="absolute inset-x-0 bottom-0 border-t border-primary/30 bg-background/90 p-5 backdrop-blur-sm">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Strategie · Technologie · Planung</p>
             </div>
@@ -66,7 +66,7 @@ function Index() {
     <section id="unternehmensberatung" className="scroll-mt-24 border-b border-border">
       <div className="site-container grid lg:grid-cols-12">
         <div className="relative border-x border-border lg:col-span-7">
-          <div className="group h-full min-h-[30rem] overflow-hidden"><img src={heroImage} alt="Strategische Unternehmensberatung im gemeinsamen Gespräch" width={1600} height={1072} loading="lazy" className="image-lift size-full object-cover" /></div>
+          <div className="group h-full min-h-[30rem] overflow-hidden"><img src={heroImage.url} alt="Strategische Unternehmensberatung im gemeinsamen Gespräch" width={1600} height={1072} loading="lazy" className="image-lift size-full object-cover" /></div>
           <span className="absolute left-0 top-0 bg-primary px-5 py-4 text-sm font-bold text-primary-foreground">01</span>
         </div>
         <article className="flex flex-col justify-center border-x border-t border-border p-8 lg:col-span-5 lg:border-l-0 lg:border-t-0 lg:p-14">
@@ -93,7 +93,7 @@ function Index() {
           </div>
         </article>
         <div className="group relative min-h-[31rem] overflow-hidden border-x border-t border-border lg:col-span-7 lg:border-l-0 lg:border-t-0">
-          <img src={itImage} alt="IT-Beratung und digitale Systemplanung" width={1408} height={1056} loading="lazy" className="image-lift absolute inset-0 size-full object-cover" />
+          <img src={itImage.url} alt="IT-Beratung und digitale Systemplanung" width={1408} height={1056} loading="lazy" className="image-lift absolute inset-0 size-full object-cover" />
           <div className="absolute bottom-0 right-0 max-w-xs border-l border-t border-border bg-background p-6"><p className="text-sm font-semibold">Von der fachlichen Anforderung zur klaren technischen Richtung.</p></div>
         </div>
       </div>
@@ -101,7 +101,7 @@ function Index() {
 
     <section id="architektur" className="scroll-mt-24 border-b border-border">
       <div className="site-container grid lg:grid-cols-12">
-        <div className="group relative min-h-[32rem] overflow-hidden border-x border-border lg:col-span-6"><img src={architectureImage} alt="Moderne Architektur als Ausdruck klarer Planung" width={1408} height={1056} loading="lazy" className="image-lift absolute inset-0 size-full object-cover" /><span className="vertical-label absolute right-0 top-0 bg-background px-3 py-6 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-primary">Planung · Koordination · Wirtschaftlichkeit</span></div>
+        <div className="group relative min-h-[32rem] overflow-hidden border-x border-border lg:col-span-6"><img src={architectureImage.url} alt="Moderne Architektur als Ausdruck klarer Planung" width={1408} height={1056} loading="lazy" className="image-lift absolute inset-0 size-full object-cover" /><span className="vertical-label absolute right-0 top-0 bg-background px-3 py-6 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-primary">Planung · Koordination · Wirtschaftlichkeit</span></div>
         <article className="border-x border-t border-border p-8 lg:col-span-6 lg:border-l-0 lg:border-t-0 lg:p-14">
           <div className="flex items-center justify-between"><Building2 className="size-8 text-primary" strokeWidth={1.5} /><span className="text-sm font-bold text-primary">03</span></div>
           <p className="eyebrow mt-10 text-primary">Architektur & Hochbau</p>
@@ -140,10 +140,10 @@ function Index() {
 
     <section className="border-y border-border bg-secondary py-24 md:py-32">
       <div className="site-container grid gap-8 lg:grid-cols-12">
-        <div className="group relative min-h-[28rem] overflow-hidden border border-border lg:col-span-7"><img src={officeImage} alt="Moderner Unternehmensstandort in Düsseldorf" width={1600} height={1008} loading="lazy" className="image-lift absolute inset-0 size-full object-cover" /><div className="absolute bottom-0 left-0 bg-primary px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-primary-foreground">Denaro Consulting · Düsseldorf</div></div>
+        <div className="group relative min-h-[28rem] overflow-hidden border border-border lg:col-span-7"><img src={officeImage.url} alt="Moderner Unternehmensstandort in Düsseldorf" width={1600} height={1008} loading="lazy" className="image-lift absolute inset-0 size-full object-cover" /><div className="absolute bottom-0 left-0 bg-primary px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-primary-foreground">Denaro Consulting · Düsseldorf</div></div>
         <div className="grid gap-8 lg:col-span-5">
           <div className="border border-border bg-background p-8 md:p-10"><p className="eyebrow text-primary">Über Denaro</p><h2 className="mt-5 text-4xl font-light leading-tight">Präzise im Denken. <span className="font-semibold">Verlässlich im Handeln.</span></h2><p className="mt-6 leading-7 text-muted-foreground">Wir verbinden fachliche Perspektiven, strukturieren komplexe Aufgaben und schaffen eine klare Grundlage für Entscheidungen und Umsetzung.</p><div className="mt-8"><TextLink to="/ueber-uns">Mehr über Denaro Consulting</TextLink></div></div>
-          <div className="grid grid-cols-[1fr_1.2fr] border border-border bg-background"><img src={teamImage} alt="Teamarbeit bei Denaro Consulting" width={1408} height={1008} loading="lazy" className="h-full min-h-44 w-full object-cover" /><div className="flex flex-col justify-center p-6"><p className="text-xs font-bold uppercase tracking-[0.15em] text-primary">Unser Anspruch</p><p className="mt-3 text-sm leading-6 text-muted-foreground">Klare Kommunikation, strukturierte Zusammenarbeit und konsequente Qualität.</p></div></div>
+          <div className="grid grid-cols-[1fr_1.2fr] border border-border bg-background"><img src={teamImage.url} alt="Teamarbeit bei Denaro Consulting" width={1408} height={1008} loading="lazy" className="h-full min-h-44 w-full object-cover" /><div className="flex flex-col justify-center p-6"><p className="text-xs font-bold uppercase tracking-[0.15em] text-primary">Unser Anspruch</p><p className="mt-3 text-sm leading-6 text-muted-foreground">Klare Kommunikation, strukturierte Zusammenarbeit und konsequente Qualität.</p></div></div>
         </div>
       </div>
     </section>
