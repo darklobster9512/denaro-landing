@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Building2, Cpu, LineChart, Mail, MapPin, Phone } from "lucide-react";
 
-import consultingImage from "@/assets/denaro-boardroom-editorial.jpg";
-import itImage from "@/assets/denaro-it-consulting.jpg";
-import architectureImage from "@/assets/denaro-architecture-editorial.jpg";
+import consultingImage from "@/assets/denaro-boardroom-stock.jpg.asset.json";
+import itImage from "@/assets/denaro-it-stock.jpg.asset.json";
+import architectureImage from "@/assets/denaro-architecture-stock.jpg.asset.json";
 
 import { Button } from "@/components/ui/button";
 
@@ -52,7 +52,7 @@ export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
       {services.map(({ number, title, text, icon: Icon, image, detail }, index) => (
         <article key={title} className="grid border-b border-border py-12 md:grid-cols-12 md:gap-12 md:py-20">
           <div className={`group overflow-hidden md:col-span-5 ${index % 2 ? "md:order-2" : ""}`}>
-            <img src={image} alt="" width={1408} height={1056} loading="lazy" className="image-lift aspect-[4/3] size-full object-cover" />
+             <img src={image.url} alt="" width={1408} height={1056} loading="lazy" className="image-lift aspect-[4/3] size-full object-cover" />
           </div>
           <div className={`mt-8 md:col-span-7 md:mt-0 md:self-center ${index % 2 ? "md:order-1 md:pr-10" : "md:pl-10"}`}>
             <div className="flex items-center gap-4"><span className="text-xs font-semibold text-primary">{number}</span><Icon className="size-6 text-primary" strokeWidth={1.5} /></div>
