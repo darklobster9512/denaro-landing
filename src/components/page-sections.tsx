@@ -91,10 +91,10 @@ export function ContactDetails() {
   return (
     <div className="grid border-l border-t border-border md:grid-cols-3">
       {items.map(({ icon: Icon, label, value }) => (
-        <div key={label} className="border-b border-r border-border p-7 md:p-9">
+        <div key={label} className="group min-h-52 border-b border-r border-border p-7 transition-colors hover:bg-secondary md:p-9">
           <Icon className="size-6 text-brand-gold" />
-          <p className="mt-8 text-xs font-extrabold uppercase tracking-[0.16em] text-muted-foreground">{label}</p>
-          <div className="mt-2 text-lg font-bold text-foreground">{value}</div>
+          <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">{label}</p>
+          <div className="mt-2 text-lg font-semibold text-foreground">{value}</div>
         </div>
       ))}
     </div>
@@ -103,7 +103,7 @@ export function ContactDetails() {
 
 export function TextLink({ to, children }: { to: "/leistungen" | "/ueber-uns" | "/kontakt"; children: React.ReactNode }) {
   return (
-    <Button asChild variant="link" className="h-auto rounded-none p-0 font-bold no-underline">
+    <Button asChild variant="link" className="h-auto rounded-none p-0 font-semibold no-underline">
       <Link to={to}>{children}<ArrowRight /></Link>
     </Button>
   );

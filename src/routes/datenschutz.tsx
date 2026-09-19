@@ -27,9 +27,9 @@ const sections = [
 function DatenschutzPage() {
   return <>
     <PageIntro eyebrow="Rechtliches" title="Datenschutz" text="Informationen über die Verarbeitung personenbezogener Daten auf dieser Website." />
-    <section className="py-16 md:py-24"><div className="site-container max-w-3xl space-y-10 leading-8">
-      <p className="border-l-4 border-brand-gold pl-5 text-sm text-muted-foreground">Hinweis: Diese Datenschutzerklärung ist ein allgemeiner Ausgangsentwurf. Sie muss vor Veröffentlichung an das tatsächliche Hosting, eingebundene Dienste und weitere Datenverarbeitungen angepasst und rechtlich geprüft werden.</p>
-      {sections.map(([title, content]) => <div key={title}><h2 className="font-display text-xl font-extrabold">{title}</h2><div className="mt-3 text-muted-foreground">{content}</div></div>)}
+    <section className="py-20 md:py-28"><div className="site-container max-w-3xl leading-8">
+      <p className="mb-10 border-l-2 border-brand-gold pl-5 text-sm text-muted-foreground">Hinweis: Diese Datenschutzerklärung ist ein allgemeiner Ausgangsentwurf. Sie muss vor Veröffentlichung an das tatsächliche Hosting, eingebundene Dienste und weitere Datenverarbeitungen angepasst und rechtlich geprüft werden.</p>
+      <div className="border-t border-border">{sections.map(([title, content]) => <div key={title} className="border-b border-border py-8"><h2 className="font-display text-xl font-semibold">{title}</h2><div className="mt-3 text-muted-foreground">{content}</div></div>)}</div>
     </div></section>
   </>;
 }
