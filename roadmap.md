@@ -18,5 +18,5 @@
 # Detaillierte Startseite
 
 - [x] Professional-Structuralist-Richtung auswählen
-- [ ] Startseite als umfangreiche Enterprise-Komposition ausbauen
-- [ ] Desktop, Mobil, Verlinkungen und Überlauf prüfen
+- [x] Startseite als umfangreiche Enterprise-Komposition ausbauen
+- [x] Desktop, Mobil, Verlinkungen und Überlauf prüfen

@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return <>
     <section className="structural-grid border-b border-border bg-secondary py-8 md:py-12">
-      <div className="site-container structural-shadow grid border border-border bg-background lg:grid-cols-12">
+      <div className="site-container grid border border-border bg-background md:structural-shadow lg:grid-cols-12">
         <div className="reveal flex min-h-[38rem] flex-col justify-center border-b border-border p-7 md:p-14 lg:col-span-7 lg:border-b-0 lg:border-r lg:p-16">
           <p className="eyebrow flex items-center gap-4 text-primary"><span className="line-grow h-0.5 w-10 bg-primary" />Denaro Consulting · Düsseldorf</p>
           <h1 className="mt-8 max-w-3xl font-display text-5xl font-light leading-[1.02] md:text-7xl lg:text-[5rem]">Klarheit für <span className="font-semibold text-primary">komplexe</span> Vorhaben.</h1>
