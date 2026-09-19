@@ -1,10 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight, Building2, Check, Cpu, LineChart } from "lucide-react";
 
 import heroImage from "@/assets/denaro-boardroom-editorial.jpg";
 import architectureImage from "@/assets/denaro-architecture-editorial.jpg";
+import itImage from "@/assets/denaro-it-consulting.jpg";
+import teamImage from "@/assets/denaro-consulting-team.jpg";
+import officeImage from "@/assets/denaro-duesseldorf-office.jpg";
 import { ContactBand } from "@/components/site-shell";
-import { ServicesGrid, TextLink } from "@/components/page-sections";
+import { TextLink } from "@/components/page-sections";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
@@ -21,64 +24,126 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return <>
-    <section className="line-pattern relative overflow-hidden border-b border-border bg-background">
-      <div className="site-container grid min-h-[47rem] gap-14 py-16 lg:grid-cols-12 lg:items-center lg:py-24">
-        <div className="reveal relative z-10 lg:col-span-6">
-          <p className="eyebrow flex items-center gap-4 text-primary"><span className="h-px w-10 bg-primary" />Denaro Consulting · Düsseldorf</p>
-          <h1 className="mt-8 font-display text-5xl font-semibold leading-[1.04] md:text-7xl lg:text-[5.2rem]">Klarheit für <span className="editorial text-primary">komplexe</span> Vorhaben.</h1>
-          <p className="mt-8 max-w-xl text-lg leading-8 text-muted-foreground md:text-xl">Unternehmerische Weitsicht, technologische Kompetenz und planerische Präzision — konsequent zusammengeführt.</p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Button asChild size="lg" className="h-14 rounded-sm px-8 shadow-md"><Link to="/kontakt">Erstgespräch vereinbaren <ArrowUpRight /></Link></Button>
-            <Button asChild size="lg" variant="outline" className="h-14 rounded-sm border-border bg-background px-8 text-foreground shadow-none hover:border-primary hover:bg-brand-blue-soft hover:text-primary"><Link to="/leistungen">Unsere Leistungen</Link></Button>
+    <section className="structural-grid border-b border-border bg-secondary py-8 md:py-12">
+      <div className="site-container grid border border-border bg-background md:structural-shadow lg:grid-cols-12">
+        <div className="reveal flex min-h-[38rem] flex-col justify-center border-b border-border p-7 md:p-14 lg:col-span-7 lg:border-b-0 lg:border-r lg:p-16">
+          <p className="eyebrow flex items-center gap-4 text-primary"><span className="line-grow h-0.5 w-10 bg-primary" />Denaro Consulting · Düsseldorf</p>
+          <h1 className="mt-8 max-w-3xl font-display text-5xl font-light leading-[1.02] md:text-7xl lg:text-[5rem]">Klarheit für <span className="font-semibold text-primary">komplexe</span> Vorhaben.</h1>
+          <p className="mt-8 max-w-xl text-lg leading-8 text-muted-foreground">Unternehmerische Weitsicht, technologische Kompetenz und planerische Präzision — konsequent zusammengeführt.</p>
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <Button asChild size="lg" className="h-14 rounded-none px-8"><Link to="/kontakt">Erstgespräch vereinbaren <ArrowUpRight /></Link></Button>
+            <Button asChild size="lg" variant="outline" className="h-14 rounded-none border-foreground bg-background px-8 text-foreground shadow-none hover:border-primary hover:bg-secondary hover:text-primary"><Link to="/leistungen">Unsere Expertise</Link></Button>
           </div>
         </div>
-        <div className="reveal-delay relative pb-10 lg:col-span-6 lg:pl-10">
-          <div className="absolute -right-6 -top-6 h-full w-full border border-primary/20" />
-          <div className="group relative aspect-[4/5] max-h-[36rem] overflow-hidden border border-border bg-secondary shadow-xl">
-            <img src={heroImage} alt="Beratungsteam bei einer strategischen Besprechung in Düsseldorf" width={1600} height={1072} className="image-lift size-full object-cover" fetchPriority="high" />
-            <div className="absolute inset-0 bg-primary/5" />
+        <div className="reveal-delay flex min-h-[34rem] flex-col lg:col-span-5">
+          <div className="group relative min-h-[27rem] flex-1 overflow-hidden">
+            <img src={heroImage} alt="Beratungsteam bei einer strategischen Besprechung in Düsseldorf" width={1600} height={1072} className="image-lift absolute inset-0 size-full object-cover" fetchPriority="high" />
+            <div className="absolute inset-x-0 bottom-0 border-t border-primary/30 bg-background/90 p-5 backdrop-blur-sm">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Strategie · Technologie · Planung</p>
+            </div>
           </div>
-          <div className="absolute bottom-0 left-0 max-w-xs border border-border bg-background/95 p-6 shadow-xl backdrop-blur-md lg:-left-6 lg:p-8">
-            <p className="editorial text-2xl text-foreground">Drei Disziplinen.</p>
-            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Ein Anspruch an Qualität</p>
-            <div className="mt-5 h-px w-12 bg-primary" />
+          <div className="grid grid-cols-2 bg-primary text-primary-foreground">
+            <div className="border-r border-primary-foreground/25 p-6"><span className="block text-2xl font-semibold">03</span><span className="mt-2 block text-xs uppercase tracking-[0.14em] opacity-80">Kompetenzfelder</span></div>
+            <div className="p-6"><span className="block text-2xl font-semibold">DUS</span><span className="mt-2 block text-xs uppercase tracking-[0.14em] opacity-80">Standort Düsseldorf</span></div>
           </div>
         </div>
-        <div className="absolute bottom-7 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 lg:flex"><span className="text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground">Entdecken</span><ArrowDown className="size-4 text-primary" /></div>
+        <div className="col-span-full grid border-t border-border sm:grid-cols-3">
+          {[["01","Unternehmensberatung","#unternehmensberatung"],["02","IT-Beratung","#it-beratung"],["03","Architektur & Hochbau","#architektur"]].map(([number, label, href]) => <a key={number} href={href} className="group flex items-center justify-between border-b border-border p-5 last:border-b-0 hover:bg-secondary sm:border-b-0 sm:border-r sm:last:border-r-0"><span className="flex items-center gap-4"><span className="text-xs font-bold text-primary">{number}</span><span className="text-sm font-semibold">{label}</span></span><ArrowDown className="size-4 text-muted-foreground transition-transform group-hover:translate-y-1 group-hover:text-primary" /></a>)}
+        </div>
+      </div>
+    </section>
+
+    <section className="border-b border-border py-24 md:py-32">
+      <div className="site-container">
+        <div className="grid gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-2"><p className="eyebrow text-primary">01—03 / Kompetenzfelder</p></div>
+          <div className="lg:col-span-7"><h2 className="font-display text-4xl font-light leading-tight md:text-6xl">Drei Perspektiven für Entscheidungen, die <span className="font-semibold text-primary">weitertragen.</span></h2></div>
+          <div className="lg:col-span-3 lg:pt-3"><p className="text-lg leading-8 text-muted-foreground">Komplexe Aufgaben brauchen mehr als eine Disziplin. Wir betrachten wirtschaftliche, digitale und bauliche Zusammenhänge gemeinsam.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="unternehmensberatung" className="scroll-mt-24 border-b border-border">
+      <div className="site-container grid lg:grid-cols-12">
+        <div className="relative border-x border-border lg:col-span-7">
+          <div className="group h-full min-h-[30rem] overflow-hidden"><img src={heroImage} alt="Strategische Unternehmensberatung im gemeinsamen Gespräch" width={1600} height={1072} loading="lazy" className="image-lift size-full object-cover" /></div>
+          <span className="absolute left-0 top-0 bg-primary px-5 py-4 text-sm font-bold text-primary-foreground">01</span>
+        </div>
+        <article className="flex flex-col justify-center border-x border-t border-border p-8 lg:col-span-5 lg:border-l-0 lg:border-t-0 lg:p-14">
+          <LineChart className="size-8 text-primary" strokeWidth={1.5} />
+          <p className="eyebrow mt-10 text-primary">Unternehmensberatung</p>
+          <h2 className="mt-5 text-4xl font-semibold leading-tight">Entscheidungen mit wirtschaftlicher Substanz.</h2>
+          <p className="mt-6 leading-7 text-muted-foreground">Wir ordnen Strukturen, schärfen Optionen und begleiten Unternehmen von der strategischen Fragestellung bis zur belastbaren Umsetzung.</p>
+          <ul className="mt-8 border-t border-border">
+            {["Strategie und Organisation","Prozess- und Projektbegleitung","Wirtschaftliche Entscheidungsgrundlagen"].map(item => <li key={item} className="flex items-center gap-3 border-b border-border py-3 text-sm font-semibold"><Check className="size-4 text-primary" />{item}</li>)}
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="it-beratung" className="scroll-mt-24 border-b border-border bg-secondary">
+      <div className="site-container grid lg:grid-cols-12">
+        <article className="flex flex-col justify-center border-x border-border p-8 lg:col-span-5 lg:p-14">
+          <Cpu className="size-8 text-primary" strokeWidth={1.5} />
+          <p className="eyebrow mt-10 text-primary">02 / IT-Beratung</p>
+          <h2 className="mt-5 text-4xl font-semibold leading-tight">Technologie, die fachlich funktioniert.</h2>
+          <p className="mt-6 leading-7 text-muted-foreground">Wir übersetzen Anforderungen in tragfähige IT-Lösungen und schaffen Orientierung bei Systemen, Prozessen und Digitalisierung.</p>
+          <div className="mt-8 grid grid-cols-2 border-l border-t border-border bg-background">
+            {["Digitalisierung","Systemanalyse","Prozesse","Projektbegleitung"].map((item, index) => <div key={item} className="border-b border-r border-border p-4"><span className="text-xs font-bold text-primary">0{index + 1}</span><p className="mt-2 text-sm font-semibold">{item}</p></div>)}
+          </div>
+        </article>
+        <div className="group relative min-h-[31rem] overflow-hidden border-x border-t border-border lg:col-span-7 lg:border-l-0 lg:border-t-0">
+          <img src={itImage} alt="IT-Beratung und digitale Systemplanung" width={1408} height={1056} loading="lazy" className="image-lift absolute inset-0 size-full object-cover" />
+          <div className="absolute bottom-0 right-0 max-w-xs border-l border-t border-border bg-background p-6"><p className="text-sm font-semibold">Von der fachlichen Anforderung zur klaren technischen Richtung.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="architektur" className="scroll-mt-24 border-b border-border">
+      <div className="site-container grid lg:grid-cols-12">
+        <div className="group relative min-h-[32rem] overflow-hidden border-x border-border lg:col-span-6"><img src={architectureImage} alt="Moderne Architektur als Ausdruck klarer Planung" width={1408} height={1056} loading="lazy" className="image-lift absolute inset-0 size-full object-cover" /><span className="vertical-label absolute right-0 top-0 bg-background px-3 py-6 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-primary">Planung · Koordination · Wirtschaftlichkeit</span></div>
+        <article className="border-x border-t border-border p-8 lg:col-span-6 lg:border-l-0 lg:border-t-0 lg:p-14">
+          <div className="flex items-center justify-between"><Building2 className="size-8 text-primary" strokeWidth={1.5} /><span className="text-sm font-bold text-primary">03</span></div>
+          <p className="eyebrow mt-10 text-primary">Architektur & Hochbau</p>
+          <h2 className="mt-5 text-4xl font-semibold leading-tight">Planung mit Blick auf das Ganze.</h2>
+          <p className="mt-6 max-w-xl leading-7 text-muted-foreground">Wir verbinden planerisches Verständnis mit wirtschaftlicher Perspektive – für klare Abläufe und zukunftsfähige Bauvorhaben.</p>
+          <div className="mt-10 grid gap-px bg-border sm:grid-cols-3">
+            {[["01","Planungsberatung"],["02","Schnittstellen"],["03","Projektbetrachtung"]].map(([number,label]) => <div key={number} className="bg-background p-5"><span className="text-xs font-bold text-primary">{number}</span><p className="mt-6 text-sm font-semibold">{label}</p></div>)}
+          </div>
+          <div className="mt-9"><TextLink to="/leistungen">Alle Leistungen im Überblick</TextLink></div>
+        </article>
+      </div>
+    </section>
+
+    <section className="structural-grid border-b border-border bg-brand-blue-soft py-24 md:py-32">
+      <div className="site-container">
+        <div className="grid min-w-0 overflow-hidden border border-border bg-background lg:grid-cols-12">
+          <div className="min-w-0 border-b border-border p-8 md:p-12 lg:col-span-5 lg:border-b-0 lg:border-r">
+            <p className="eyebrow text-primary">Der verbindende Blick</p>
+            <h2 className="mt-6 text-4xl font-light leading-tight md:text-5xl">Wir denken nicht in Silos, sondern in <span className="font-semibold text-primary">Zusammenhängen.</span></h2>
+          </div>
+          <div className="min-w-0 lg:col-span-7">
+            {[["Wirtschaft","Entscheidungen brauchen eine belastbare unternehmerische Grundlage."],["Systeme","Technologie muss Prozesse unterstützen und dauerhaft tragfähig bleiben."],["Projekte","Planung wird wirksam, wenn Schnittstellen früh erkannt und klar geführt werden."]].map(([title,text], index) => <div key={title} className="grid border-b border-border p-7 last:border-b-0 sm:grid-cols-[3rem_1fr_2fr] sm:gap-6"><span className="text-xs font-bold text-primary">0{index + 1}</span><h3 className="font-semibold">{title}</h3><p className="mt-3 text-sm leading-6 text-muted-foreground sm:mt-0">{text}</p></div>)}
+          </div>
+        </div>
       </div>
     </section>
 
     <section className="py-24 md:py-32">
       <div className="site-container">
-        <div className="mb-14 grid gap-8 md:grid-cols-2 md:items-end">
-          <div><p className="eyebrow text-primary">Kompetenzfelder</p><h2 className="mt-5 font-display text-4xl font-semibold leading-tight md:text-6xl">Drei Perspektiven.<br/><span className="editorial text-primary">Ein Anspruch.</span></h2></div>
-          <p className="max-w-xl text-lg leading-8 text-muted-foreground md:justify-self-end">Komplexe Aufgaben brauchen mehr als eine Disziplin. Wir betrachten wirtschaftliche, digitale und bauliche Zusammenhänge gemeinsam.</p>
-        </div>
-        <ServicesGrid />
-        <div className="mt-10"><TextLink to="/leistungen">Alle Leistungen im Überblick</TextLink></div>
-      </div>
-    </section>
-
-    <section className="bg-secondary py-24 md:py-32">
-      <div className="site-container grid gap-12 lg:grid-cols-12 lg:items-center">
-        <div className="group relative lg:col-span-6">
-          <div className="absolute -bottom-5 -left-5 h-full w-full border border-primary/20" />
-          <img src={architectureImage} alt="Moderne Architektur als Ausdruck klarer Planung" width={1408} height={1056} loading="lazy" className="image-lift relative aspect-[4/3] w-full object-cover" />
-        </div>
-        <div className="lg:col-span-5 lg:col-start-8">
-          <p className="eyebrow text-primary">Über Denaro</p>
-          <h2 className="mt-5 font-display text-4xl font-semibold leading-tight md:text-5xl">Wir denken nicht in Silos, sondern in <span className="editorial text-primary">Zusammenhängen.</span></h2>
-          <p className="mt-7 text-lg leading-8 text-muted-foreground">Wirtschaftliche Entscheidungen beeinflussen Systeme. Systeme prägen Prozesse. Projekte brauchen Struktur. Deshalb verbinden wir Perspektiven, die in der Praxis zusammengehören.</p>
-          <div className="mt-9"><TextLink to="/ueber-uns">Mehr über Denaro Consulting</TextLink></div>
+        <div className="grid gap-10 border-b border-border pb-12 lg:grid-cols-12 lg:items-end"><div className="lg:col-span-7"><p className="eyebrow text-primary">Unser Vorgehen</p><h2 className="mt-5 font-display text-4xl font-light md:text-6xl">Von der Frage zur <span className="font-semibold text-primary">tragfähigen Lösung.</span></h2></div><p className="max-w-xl text-lg leading-8 text-muted-foreground lg:col-span-4 lg:col-start-9">Klare Verantwortlichkeiten, nachvollziehbare Entscheidungen und konkrete nächste Schritte bilden die Grundlage jeder Zusammenarbeit.</p></div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4">
+          {[["01","Analyse","Ausgangslage, Ziele und Rahmenbedingungen präzise erfassen."],["02","Struktur","Abhängigkeiten sichtbar machen und Themen belastbar ordnen."],["03","Entscheidung","Optionen bewerten und eine klare Richtung definieren."],["04","Begleitung","Die Umsetzung fokussiert bis zum wirksamen Ergebnis führen."]].map(([number,title,text]) => <article key={number} className="group border-b border-border py-10 md:border-r md:px-8 md:first:pl-0 lg:border-b-0 lg:last:border-r-0"><span className="text-xs font-bold text-primary">{number}</span><div className="mt-8 h-0.5 w-10 bg-primary transition-all group-hover:w-full" /><h3 className="mt-8 text-2xl font-semibold">{title}</h3><p className="mt-4 leading-7 text-muted-foreground">{text}</p><ArrowRight className="mt-8 size-5 text-primary" /></article>)}
         </div>
       </div>
     </section>
 
-    <section className="py-24 md:py-32">
-      <div className="site-container">
-        <div className="grid gap-10 border-b border-border pb-12 md:grid-cols-2 md:items-end"><div><p className="eyebrow text-primary">Unser Vorgehen</p><h2 className="mt-5 font-display text-4xl font-semibold md:text-6xl">Verstehen. Strukturieren. <span className="editorial text-primary">Umsetzen.</span></h2></div><p className="max-w-xl text-lg leading-8 text-muted-foreground md:justify-self-end">Klare Verantwortlichkeiten, nachvollziehbare Entscheidungen und konkrete nächste Schritte bilden die Grundlage jeder Zusammenarbeit.</p></div>
-        <div className="grid md:grid-cols-3">
-          {[["01","Verstehen","Wir hören genau hin und schärfen Ausgangslage, Ziele und Rahmenbedingungen."],["02","Strukturieren","Wir machen Abhängigkeiten sichtbar und übersetzen Komplexität in belastbare Optionen."],["03","Umsetzen","Wir begleiten Entscheidungen konsequent bis zum wirksamen Ergebnis."]].map(([number,title,text]) => <article key={number} className="border-b border-border py-10 md:border-b-0 md:border-r md:px-9 md:first:pl-0 md:last:border-r-0"><span className="text-xs font-semibold text-primary">{number}</span><h3 className="mt-8 text-2xl font-semibold">{title}</h3><p className="mt-4 leading-7 text-muted-foreground">{text}</p><ArrowRight className="mt-8 size-5 text-primary" /></article>)}
+    <section className="border-y border-border bg-secondary py-24 md:py-32">
+      <div className="site-container grid gap-8 lg:grid-cols-12">
+        <div className="group relative min-h-[28rem] overflow-hidden border border-border lg:col-span-7"><img src={officeImage} alt="Moderner Unternehmensstandort in Düsseldorf" width={1600} height={1008} loading="lazy" className="image-lift absolute inset-0 size-full object-cover" /><div className="absolute bottom-0 left-0 bg-primary px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-primary-foreground">Denaro Consulting · Düsseldorf</div></div>
+        <div className="grid gap-8 lg:col-span-5">
+          <div className="border border-border bg-background p-8 md:p-10"><p className="eyebrow text-primary">Über Denaro</p><h2 className="mt-5 text-4xl font-light leading-tight">Präzise im Denken. <span className="font-semibold">Verlässlich im Handeln.</span></h2><p className="mt-6 leading-7 text-muted-foreground">Wir verbinden fachliche Perspektiven, strukturieren komplexe Aufgaben und schaffen eine klare Grundlage für Entscheidungen und Umsetzung.</p><div className="mt-8"><TextLink to="/ueber-uns">Mehr über Denaro Consulting</TextLink></div></div>
+          <div className="grid grid-cols-[1fr_1.2fr] border border-border bg-background"><img src={teamImage} alt="Teamarbeit bei Denaro Consulting" width={1408} height={1008} loading="lazy" className="h-full min-h-44 w-full object-cover" /><div className="flex flex-col justify-center p-6"><p className="text-xs font-bold uppercase tracking-[0.15em] text-primary">Unser Anspruch</p><p className="mt-3 text-sm leading-6 text-muted-foreground">Klare Kommunikation, strukturierte Zusammenarbeit und konsequente Qualität.</p></div></div>
         </div>
       </div>
     </section>

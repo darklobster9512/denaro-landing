@@ -91,6 +91,7 @@
   --brand-blue: oklch(0.55 0.2 255);
   --brand-blue-soft: oklch(0.96 0.025 250);
   --brand-blue-deep: oklch(0.34 0.13 258);
+  --structural-shadow: 1.25rem 1.25rem 0 color-mix(in oklab, var(--brand-blue) 9%, transparent);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -188,6 +189,22 @@
   background-size: 92px 92px, 92px 92px;
 }
 
+@utility structural-grid {
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--brand-blue) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--brand-blue) 8%, transparent) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+}
+
+@utility structural-shadow {
+  box-shadow: var(--structural-shadow);
+}
+
+@utility vertical-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
 @media (min-width: 768px) {
   .site-container { width: min(100% - 4rem, 80rem); }
 }
@@ -201,4 +218,6 @@
   .reveal-delay { animation: reveal-up 800ms 140ms ease-out both; }
   .image-lift { transition: transform 800ms cubic-bezier(.2,.7,.2,1); }
   .group:hover .image-lift { transform: scale(1.025); }
+  .line-grow { transform-origin: left; animation: line-grow 900ms 250ms ease-out both; }
+  @keyframes line-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 }

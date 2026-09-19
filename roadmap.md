@@ -14,3 +14,9 @@
 - [x] Startseite und alle Unterseiten visuell angleichen
 - [x] Markenicon auf Blau aktualisieren
 - [x] Desktop, Mobil, Navigation und Seitenmetadaten prüfen
+
+# Detaillierte Startseite
+
+- [x] Professional-Structuralist-Richtung auswählen
+- [x] Startseite als umfangreiche Enterprise-Komposition ausbauen
+- [x] Desktop, Mobil, Verlinkungen und Überlauf prüfen
