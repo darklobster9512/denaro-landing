@@ -34,13 +34,25 @@ export const services = [
   },
 ];
 
-export function PageIntro({ eyebrow, title, text }: { eyebrow: string; title: string; text: string }) {
+export function PageIntro({ eyebrow, title, text, number = "01" }: { eyebrow: string; title: string; text: string; number?: string }) {
   return (
-    <section className="line-pattern relative overflow-hidden border-b border-border bg-brand-blue-soft">
-      <div className="site-container relative py-20 md:py-28 lg:py-32">
-        <p className="eyebrow text-primary">{eyebrow}</p>
-        <h1 className="mt-6 max-w-4xl font-display text-5xl font-semibold leading-[1.04] md:text-7xl">{title}</h1>
-        <p className="mt-7 max-w-2xl text-lg leading-8 text-muted-foreground">{text}</p>
+    <section className="structural-grid border-b border-border bg-secondary py-8 md:py-12">
+      <div className="site-container border border-border bg-background md:structural-shadow">
+        <div className="grid min-w-0 overflow-hidden lg:grid-cols-12">
+          <div className="border-b border-border p-7 lg:col-span-2 lg:border-b-0 lg:border-r lg:p-10">
+            <span className="text-sm font-bold text-primary">{number}/</span>
+            <p className="vertical-label mt-12 hidden text-[0.65rem] font-bold uppercase tracking-[0.2em] text-muted-foreground lg:block">Denaro Consulting · Düsseldorf</p>
+          </div>
+          <div className="border-b border-border p-7 md:p-12 lg:col-span-6 lg:border-b-0 lg:border-r lg:p-14">
+            <p className="eyebrow text-primary">{eyebrow}</p>
+            <h1 className="mt-7 max-w-4xl font-display text-5xl font-light leading-[1.02] md:text-7xl">{title}</h1>
+          </div>
+          <div className="flex flex-col justify-end p-7 md:p-10 lg:col-span-4">
+            <span className="mb-8 h-0.5 w-12 bg-primary" />
+            <p className="max-w-md text-lg leading-8 text-muted-foreground">{text}</p>
+          </div>
+        </div>
+        <div className="flex items-center justify-between border-t border-border px-7 py-4 text-[0.68rem] font-bold uppercase tracking-[0.17em] text-muted-foreground"><span>Unternehmerische Klarheit</span><span className="text-primary">Strategie · Technologie · Planung</span></div>
       </div>
     </section>
   );
@@ -48,18 +60,19 @@ export function PageIntro({ eyebrow, title, text }: { eyebrow: string; title: st
 
 export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
   if (detailed) {
-    return <div className="space-y-0 border-t border-border">
+    return <div className="border-t border-border">
       {services.map(({ number, title, text, icon: Icon, image, detail }, index) => (
-        <article key={title} className="grid border-b border-border py-12 md:grid-cols-12 md:gap-12 md:py-20">
-          <div className={`group overflow-hidden md:col-span-5 ${index % 2 ? "md:order-2" : ""}`}>
+        <article key={title} className="grid border-b border-border py-14 md:grid-cols-12 md:py-24">
+          <div className={`group relative overflow-hidden border-x border-border md:col-span-6 ${index % 2 ? "md:order-2" : ""}`}>
              <img src={image.url} alt="" width={1408} height={1056} loading="lazy" className="image-lift aspect-[4/3] size-full object-cover" />
+             <span className="absolute left-0 top-0 bg-primary px-5 py-4 text-sm font-bold text-primary-foreground">{number}</span>
           </div>
-          <div className={`mt-8 md:col-span-7 md:mt-0 md:self-center ${index % 2 ? "md:order-1 md:pr-10" : "md:pl-10"}`}>
-            <div className="flex items-center gap-4"><span className="text-xs font-semibold text-primary">{number}</span><Icon className="size-6 text-primary" strokeWidth={1.5} /></div>
-            <h2 className="mt-6 font-display text-3xl font-semibold md:text-5xl">{title}</h2>
+          <div className={`border-x border-t border-border p-8 md:col-span-6 md:self-stretch md:border-t-0 md:p-12 lg:p-14 ${index % 2 ? "md:order-1 md:border-r-0" : "md:border-l-0"}`}>
+            <div className="flex items-center justify-between"><span className="eyebrow text-primary">Kompetenzfeld {number}</span><Icon className="size-7 text-primary" strokeWidth={1.5} /></div>
+            <h2 className="mt-10 font-display text-3xl font-semibold md:text-5xl">{title}</h2>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">{text}</p>
-            <ul className="mt-7 grid gap-3 sm:grid-cols-2">
-              {detail.map((item) => <li key={item} className="flex items-center gap-3 text-sm font-semibold"><span className="h-px w-6 bg-primary" />{item}</li>)}
+            <ul className="mt-10 border-t border-border">
+              {detail.map((item, itemIndex) => <li key={item} className="grid grid-cols-[2.5rem_1fr] border-b border-border py-4 text-sm font-semibold"><span className="text-xs text-primary">0{itemIndex + 1}</span>{item}</li>)}
             </ul>
           </div>
         </article>
@@ -91,10 +104,11 @@ export function ContactDetails() {
   return (
     <div className="grid border-l border-t border-border md:grid-cols-3">
       {items.map(({ icon: Icon, label, value }) => (
-        <div key={label} className="group min-h-52 border-b border-r border-border p-7 transition-colors hover:bg-secondary md:p-9">
-          <Icon className="size-6 text-primary" />
-          <p className="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">{label}</p>
-          <div className="mt-2 text-lg font-semibold text-foreground">{value}</div>
+        <div key={label} className="group relative min-h-64 border-b border-r border-border p-7 transition-colors hover:bg-secondary md:p-9">
+          <div className="flex items-start justify-between"><Icon className="size-7 text-primary" strokeWidth={1.5} /><span className="text-xs font-bold text-primary">0{items.findIndex((item) => item.label === label) + 1}</span></div>
+          <p className="eyebrow mt-14 text-muted-foreground">{label}</p>
+          <div className="mt-3 text-lg font-semibold leading-7 text-foreground">{value}</div>
+          <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-primary transition-all group-hover:w-full" />
         </div>
       ))}
     </div>
