@@ -5,7 +5,7 @@ import heroImage from "@/assets/denaro-boardroom-stock.jpg.asset.json";
 import architectureImage from "@/assets/denaro-architecture-stock.jpg.asset.json";
 import itImage from "@/assets/denaro-it-stock.jpg.asset.json";
 import teamImage from "@/assets/denaro-team-stock.jpg.asset.json";
-import officeImage from "@/assets/denaro-duesseldorf-stock.jpg.asset.json";
+import officeImage from "@/assets/denaro-duesseldorf-stock-day.jpg.asset.json";
 import { ContactBand } from "@/components/site-shell";
 import { TextLink } from "@/components/page-sections";
 import { Button } from "@/components/ui/button";
