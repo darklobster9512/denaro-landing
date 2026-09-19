@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowDown, ArrowRight, ArrowUpRight, Building2, Check, Cpu, LineChart } from "lucide-react";
 
 import heroImage from "@/assets/denaro-boardroom-stock.jpg.asset.json";
+import heroArchitectureImage from "@/assets/denaro-hero-corporate-architecture.jpg.asset.json";
 import architectureImage from "@/assets/denaro-architecture-stock.jpg.asset.json";
 import itImage from "@/assets/denaro-it-stock.jpg.asset.json";
 import teamImage from "@/assets/denaro-team-stock.jpg.asset.json";
@@ -37,7 +38,7 @@ function Index() {
         </div>
         <div className="reveal-delay flex min-h-[34rem] flex-col lg:col-span-5">
           <div className="group relative min-h-[27rem] flex-1 overflow-hidden">
-            <img src={heroImage.url} alt="Beratungsteam bei einer strategischen Besprechung in Düsseldorf" width={1600} height={1072} className="image-lift absolute inset-0 size-full object-cover" fetchPriority="high" />
+            <img src={heroArchitectureImage.url} alt="Moderne Unternehmensarchitektur mit klarer Glasfassade" width={1800} height={1198} className="image-lift absolute inset-0 size-full object-cover" fetchPriority="high" />
             <div className="absolute inset-x-0 bottom-0 border-t border-primary/30 bg-background/90 p-5 backdrop-blur-sm">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Strategie · Technologie · Planung</p>
             </div>
