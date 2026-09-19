@@ -1,10 +1,18 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import { ContactDetails, PageIntro } from "@/components/page-sections";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -22,71 +30,135 @@ export const Route = createFileRoute("/kontakt")({
   component: KontaktPage,
 });
 
+const fieldClass =
+  "h-14 rounded-none border-0 border-b border-border bg-transparent px-0 text-base shadow-none transition-colors focus-visible:border-primary focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/60";
+
+function FieldLabel({ htmlFor, children, required }: { htmlFor: string; children: React.ReactNode; required?: boolean }) {
+  return (
+    <Label htmlFor={htmlFor} className="eyebrow flex items-baseline gap-1.5 text-foreground">
+      {children}
+      {required && <span className="text-primary" aria-hidden="true">*</span>}
+    </Label>
+  );
+}
+
 function ContactForm() {
-  const [sent, setSent] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   return (
-    <form
-      className="grid gap-x-8 gap-y-7 md:grid-cols-2"
-      onSubmit={(event) => {
-        event.preventDefault();
-        setSent(true);
-      }}
-    >
-      <div className="space-y-2">
-        <Label htmlFor="name">Name *</Label>
-        <Input id="name" name="name" required autoComplete="name" placeholder="Ihr Name" className="h-12 rounded-none border-border bg-background shadow-none" />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="company">Unternehmen</Label>
-        <Input id="company" name="company" autoComplete="organization" placeholder="Ihr Unternehmen" className="h-12 rounded-none border-border bg-background shadow-none" />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="email">E-Mail *</Label>
-        <Input id="email" name="email" type="email" required autoComplete="email" placeholder="name@unternehmen.de" className="h-12 rounded-none border-border bg-background shadow-none" />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="phone">Telefon</Label>
-        <Input id="phone" name="phone" type="tel" autoComplete="tel" placeholder="+49 …" className="h-12 rounded-none border-border bg-background shadow-none" />
-      </div>
-      <div className="space-y-2 md:col-span-2">
-        <Label htmlFor="topic">Thema *</Label>
-        <Select name="topic" required>
-          <SelectTrigger id="topic" className="h-12 w-full rounded-none border-border bg-background shadow-none">
-            <SelectValue placeholder="Bitte wählen" />
-          </SelectTrigger>
-          <SelectContent className="rounded-none">
-            <SelectItem value="unternehmensberatung">Unternehmensberatung</SelectItem>
-            <SelectItem value="it-beratung">IT-Beratung</SelectItem>
-            <SelectItem value="architektur-hochbau">Architektur &amp; Hochbau</SelectItem>
-            <SelectItem value="sonstiges">Sonstiges</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-      <div className="space-y-2 md:col-span-2">
-        <Label htmlFor="message">Nachricht *</Label>
-        <Textarea id="message" name="message" required rows={6} placeholder="Beschreiben Sie kurz Ihr Vorhaben …" className="rounded-none border-border bg-background shadow-none" />
-      </div>
-      <div className="flex items-start gap-3 md:col-span-2">
-        <Checkbox id="privacy" required className="mt-1 rounded-none" />
-        <Label htmlFor="privacy" className="text-sm font-normal leading-6 text-muted-foreground">
-          Ich habe die <Link to="/datenschutz" className="font-medium text-primary underline underline-offset-4">Datenschutzerklärung</Link> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden. *
-        </Label>
-      </div>
-      <div className="md:col-span-2">
-        <Button type="submit" size="lg" className="h-14 w-full rounded-none px-10 shadow-none md:w-auto">
-          Anfrage senden <ArrowUpRight />
-        </Button>
-      </div>
-      {sent && (
-        <div className="flex items-start gap-3 border border-primary/30 bg-brand-blue-soft p-5 md:col-span-2" role="status">
-          <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-primary" />
-          <p className="text-sm leading-6">
-            Vielen Dank für Ihre Nachricht. Dieses Formular ist aktuell ein Entwurf und versendet noch keine Daten – bitte richten Sie Ihre Anfrage direkt an <a href="mailto:kontakt@denaro-consult.com" className="font-medium text-primary underline underline-offset-4">kontakt@denaro-consult.com</a>.
-          </p>
+    <>
+      <form
+        ref={formRef}
+        className="border border-border"
+        onSubmit={(event) => {
+          event.preventDefault();
+          setDialogOpen(true);
+        }}
+      >
+        {/* Gruppe 01 — Angaben */}
+        <div className="border-b border-border">
+          <div className="flex items-baseline gap-6 border-b border-border bg-brand-blue-soft px-6 py-5 md:px-10">
+            <span className="text-sm font-bold text-primary">01</span>
+            <p className="eyebrow text-foreground">Ihre Angaben</p>
+          </div>
+          <div className="grid gap-x-10 gap-y-8 px-6 py-8 md:grid-cols-2 md:px-10 md:py-10">
+            <div className="space-y-3">
+              <FieldLabel htmlFor="name" required>Name</FieldLabel>
+              <Input id="name" name="name" required autoComplete="name" placeholder="Vor- und Nachname" className={fieldClass} />
+            </div>
+            <div className="space-y-3">
+              <FieldLabel htmlFor="company">Unternehmen</FieldLabel>
+              <Input id="company" name="company" autoComplete="organization" placeholder="Name Ihres Unternehmens" className={fieldClass} />
+            </div>
+            <div className="space-y-3">
+              <FieldLabel htmlFor="email" required>E-Mail</FieldLabel>
+              <Input id="email" name="email" type="email" required autoComplete="email" placeholder="name@unternehmen.de" className={fieldClass} />
+            </div>
+            <div className="space-y-3">
+              <FieldLabel htmlFor="phone">Telefon</FieldLabel>
+              <Input id="phone" name="phone" type="tel" autoComplete="tel" placeholder="+49 …" className={fieldClass} />
+            </div>
+          </div>
         </div>
-      )}
-    </form>
+
+        {/* Gruppe 02 — Vorhaben */}
+        <div className="border-b border-border">
+          <div className="flex items-baseline gap-6 border-b border-border bg-brand-blue-soft px-6 py-5 md:px-10">
+            <span className="text-sm font-bold text-primary">02</span>
+            <p className="eyebrow text-foreground">Ihr Vorhaben</p>
+          </div>
+          <div className="grid gap-x-10 gap-y-8 px-6 py-8 md:px-10 md:py-10">
+            <div className="space-y-3">
+              <FieldLabel htmlFor="topic" required>Thema</FieldLabel>
+              <Select name="topic" required>
+                <SelectTrigger id="topic" className={fieldClass + " w-full"}>
+                  <SelectValue placeholder="Bitte wählen" />
+                </SelectTrigger>
+                <SelectContent className="rounded-none">
+                  <SelectItem value="unternehmensberatung">Unternehmensberatung</SelectItem>
+                  <SelectItem value="it-beratung">IT-Beratung</SelectItem>
+                  <SelectItem value="architektur-hochbau">Architektur &amp; Hochbau</SelectItem>
+                  <SelectItem value="sonstiges">Sonstiges</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="space-y-3">
+              <FieldLabel htmlFor="message" required>Nachricht</FieldLabel>
+              <Textarea id="message" name="message" required rows={5} placeholder="Beschreiben Sie kurz Ihr Vorhaben und Ihre Ziele …" className={fieldClass + " min-h-36 resize-y py-3 leading-7"} />
+            </div>
+          </div>
+        </div>
+
+        {/* Abschluss */}
+        <div className="px-6 py-8 md:px-10 md:py-10">
+          <div className="flex items-start gap-4">
+            <Checkbox id="privacy" required className="mt-1 size-5 rounded-none" />
+            <Label htmlFor="privacy" className="text-sm font-normal leading-7 text-muted-foreground">
+              Ich habe die <Link to="/datenschutz" className="font-medium text-primary underline underline-offset-4">Datenschutzerklärung</Link> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden. <span className="text-primary" aria-hidden="true">*</span>
+            </Label>
+          </div>
+          <div className="mt-10 flex flex-col gap-6 border-t border-border pt-8 md:flex-row md:items-center md:justify-between">
+            <p className="text-sm leading-6 text-muted-foreground">
+              Pflichtfelder sind mit <span className="text-primary" aria-hidden="true">*</span> gekennzeichnet.<br />
+              Wir melden uns persönlich bei Ihnen zurück.
+            </p>
+            <Button type="submit" size="lg" className="h-16 w-full rounded-none px-12 text-base shadow-none md:w-auto">
+              Anfrage senden <ArrowUpRight />
+            </Button>
+          </div>
+        </div>
+      </form>
+
+      <Dialog open={dialogOpen} onOpenChange={(open) => {
+        setDialogOpen(open);
+        if (!open) formRef.current?.reset();
+      }}>
+        <DialogContent className="max-w-lg rounded-none border-border p-0">
+          <div className="h-1 w-full bg-primary" aria-hidden="true" />
+          <DialogHeader className="px-8 pt-8 md:px-10">
+            <CheckCircle2 className="mb-6 size-10 text-primary" strokeWidth={1.5} />
+            <DialogTitle className="font-display text-2xl font-light leading-tight md:text-3xl">
+              Vielen Dank für <span className="font-semibold text-primary">Ihre Anfrage.</span>
+            </DialogTitle>
+            <DialogDescription className="pt-4 text-sm leading-7">
+              Ihre Anfrage ist bei uns eingegangen. Wir melden uns persönlich bei Ihnen zurück.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="border-t border-border bg-brand-blue-soft px-8 py-5 md:px-10">
+            <p className="text-xs leading-6 text-muted-foreground">
+              Hinweis: Dieses Formular ist aktuell ein Entwurf und versendet noch keine Daten. Bitte richten Sie Ihre Anfrage direkt an{" "}
+              <a href="mailto:kontakt@denaro-consult.com" className="font-medium text-primary underline underline-offset-4">kontakt@denaro-consult.com</a>.
+            </p>
+          </div>
+          <DialogFooter className="px-8 pb-8 pt-6 md:px-10">
+            <Button onClick={() => setDialogOpen(false)} size="lg" className="h-12 w-full rounded-none px-10 shadow-none sm:w-auto">
+              Schließen
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 }
 
@@ -101,7 +173,7 @@ function KontaktPage() {
           <div className="mb-12 grid gap-8 border-b border-border pb-10 lg:grid-cols-12"><p className="eyebrow text-primary lg:col-span-3">Kontaktformular</p><h2 className="font-display text-3xl font-light leading-tight lg:col-span-6 lg:col-start-7 md:text-4xl">Unverbindlich anfragen. <span className="font-semibold text-primary">Wir melden uns persönlich zurück.</span></h2></div>
           <div className="grid lg:grid-cols-12">
             <div className="hidden lg:col-span-2 lg:block"><span className="vertical-label text-muted-foreground">Anfrage — 05</span></div>
-            <div className="lg:col-span-9 lg:col-start-4">
+            <div className="min-w-0 lg:col-span-9 lg:col-start-4">
               <ContactForm />
             </div>
           </div>
