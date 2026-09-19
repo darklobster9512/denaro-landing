@@ -16,6 +16,7 @@ const navItems = [
   { to: "/", label: "Startseite" },
   { to: "/leistungen", label: "Leistungen" },
   { to: "/ueber-uns", label: "Über uns" },
+  { to: "/team", label: "Team" },
   { to: "/kontakt", label: "Kontakt" },
 ] as const;
 
@@ -124,6 +125,7 @@ export function SiteFooter() {
           <div className="mt-3 flex flex-col items-start text-muted-foreground">
             <Link to="/leistungen" className="hover:text-primary">Leistungen</Link>
             <Link to="/ueber-uns" className="hover:text-primary">Über uns</Link>
+            <Link to="/team" className="hover:text-primary">Team</Link>
             <Link to="/kontakt" className="hover:text-primary">Kontakt</Link>
             <Link to="/impressum" className="hover:text-primary">Impressum</Link>
             <Link to="/datenschutz" className="hover:text-primary">Datenschutz</Link>
