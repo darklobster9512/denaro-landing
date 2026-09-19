@@ -117,12 +117,12 @@ function Index() {
 
     <section className="structural-grid border-b border-border bg-brand-blue-soft py-24 md:py-32">
       <div className="site-container">
-        <div className="grid border border-border bg-background lg:grid-cols-12">
-          <div className="border-b border-border p-8 md:p-12 lg:col-span-5 lg:border-b-0 lg:border-r">
+        <div className="grid min-w-0 overflow-hidden border border-border bg-background lg:grid-cols-12">
+          <div className="min-w-0 border-b border-border p-8 md:p-12 lg:col-span-5 lg:border-b-0 lg:border-r">
             <p className="eyebrow text-primary">Der verbindende Blick</p>
             <h2 className="mt-6 text-4xl font-light leading-tight md:text-5xl">Wir denken nicht in Silos, sondern in <span className="font-semibold text-primary">Zusammenhängen.</span></h2>
           </div>
-          <div className="lg:col-span-7">
+          <div className="min-w-0 lg:col-span-7">
             {[["Wirtschaft","Entscheidungen brauchen eine belastbare unternehmerische Grundlage."],["Systeme","Technologie muss Prozesse unterstützen und dauerhaft tragfähig bleiben."],["Projekte","Planung wird wirksam, wenn Schnittstellen früh erkannt und klar geführt werden."]].map(([title,text], index) => <div key={title} className="grid border-b border-border p-7 last:border-b-0 sm:grid-cols-[3rem_1fr_2fr] sm:gap-6"><span className="text-xs font-bold text-primary">0{index + 1}</span><h3 className="font-semibold">{title}</h3><p className="mt-3 text-sm leading-6 text-muted-foreground sm:mt-0">{text}</p></div>)}
           </div>
         </div>
