@@ -1,6 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Building2, Cpu, LineChart, Mail, MapPin, Phone } from "lucide-react";
 
+import consultingImage from "@/assets/denaro-boardroom-editorial.jpg";
+import itImage from "@/assets/denaro-it-consulting.jpg";
+import architectureImage from "@/assets/denaro-architecture-editorial.jpg";
+
 import { Button } from "@/components/ui/button";
 
 export const services = [
@@ -9,51 +13,69 @@ export const services = [
     title: "Unternehmensberatung",
     text: "Wir ordnen Strukturen, schärfen Entscheidungen und begleiten Unternehmen von der strategischen Idee bis zur belastbaren Umsetzung.",
     icon: LineChart,
+    image: consultingImage,
+    detail: ["Strategie und Organisation", "Prozess- und Projektbegleitung", "Wirtschaftliche Entscheidungsgrundlagen"],
   },
   {
     number: "02",
     title: "IT-Beratung",
     text: "Wir übersetzen fachliche Anforderungen in tragfähige IT-Lösungen und schaffen Orientierung bei Systemen, Prozessen und Digitalisierung.",
     icon: Cpu,
+    image: itImage,
+    detail: ["Digitalisierungsstrategien", "System- und Prozessanalyse", "Technologische Projektbegleitung"],
   },
   {
     number: "03",
     title: "Architektur & Hochbau",
     text: "Wir verbinden planerisches Verständnis mit wirtschaftlicher Perspektive – für klare Abläufe und zukunftsfähige Bauvorhaben.",
     icon: Building2,
+    image: architectureImage,
+    detail: ["Planungs- und Projektberatung", "Schnittstellenkoordination", "Wirtschaftliche Projektbetrachtung"],
   },
 ];
 
 export function PageIntro({ eyebrow, title, text }: { eyebrow: string; title: string; text: string }) {
   return (
-    <section className="bg-primary text-primary-foreground">
-      <div className="site-container py-20 md:py-28">
+    <section className="line-pattern relative overflow-hidden bg-brand-ink text-primary-foreground">
+      <div className="site-container relative py-20 md:py-28 lg:py-32">
         <p className="eyebrow text-brand-gold">{eyebrow}</p>
-        <h1 className="mt-5 max-w-4xl font-display text-5xl font-extrabold leading-[1.05] md:text-7xl">{title}</h1>
-        <p className="mt-7 max-w-2xl text-lg leading-8 text-primary-foreground/75">{text}</p>
+        <h1 className="mt-6 max-w-4xl font-display text-5xl font-semibold leading-[1.04] md:text-7xl">{title}</h1>
+        <p className="mt-7 max-w-2xl text-lg leading-8 text-primary-foreground/68">{text}</p>
       </div>
     </section>
   );
 }
 
 export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
+  if (detailed) {
+    return <div className="space-y-0 border-t border-border">
+      {services.map(({ number, title, text, icon: Icon, image, detail }, index) => (
+        <article key={title} className="grid border-b border-border py-12 md:grid-cols-12 md:gap-12 md:py-20">
+          <div className={`group overflow-hidden md:col-span-5 ${index % 2 ? "md:order-2" : ""}`}>
+            <img src={image} alt="" width={1408} height={1056} loading="lazy" className="image-lift aspect-[4/3] size-full object-cover" />
+          </div>
+          <div className={`mt-8 md:col-span-7 md:mt-0 md:self-center ${index % 2 ? "md:order-1 md:pr-10" : "md:pl-10"}`}>
+            <div className="flex items-center gap-4"><span className="text-xs font-semibold text-brand-gold">{number}</span><Icon className="size-6 text-primary" strokeWidth={1.5} /></div>
+            <h2 className="mt-6 font-display text-3xl font-semibold md:text-5xl">{title}</h2>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">{text}</p>
+            <ul className="mt-7 grid gap-3 sm:grid-cols-2">
+              {detail.map((item) => <li key={item} className="flex items-center gap-3 text-sm font-semibold"><span className="h-px w-6 bg-brand-gold" />{item}</li>)}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>;
+  }
   return (
-    <div className="grid border-l border-t border-border md:grid-cols-3">
+    <div className="grid border-l border-t border-border lg:grid-cols-3">
       {services.map(({ number, title, text, icon: Icon }) => (
-        <article key={title} className="group border-b border-r border-border bg-background p-7 transition-colors hover:bg-secondary md:p-9">
+        <article key={title} className="group min-h-80 border-b border-r border-border bg-background p-7 transition-colors hover:bg-secondary md:p-9">
           <div className="flex items-start justify-between">
             <span className="text-xs font-extrabold text-brand-gold">{number}</span>
             <Icon className="size-7 text-primary" strokeWidth={1.5} />
           </div>
-          <h2 className="mt-12 font-display text-2xl font-extrabold text-foreground">{title}</h2>
+           <h2 className="mt-14 font-display text-2xl font-semibold text-foreground">{title}</h2>
           <p className="mt-4 leading-7 text-muted-foreground">{text}</p>
-          {detailed && (
-            <ul className="mt-6 space-y-3 border-t border-border pt-5 text-sm text-foreground">
-              {title === "Unternehmensberatung" && <><li>Strategie und Organisation</li><li>Prozess- und Projektbegleitung</li><li>Wirtschaftliche Entscheidungsgrundlagen</li></>}
-              {title === "IT-Beratung" && <><li>Digitalisierungsstrategien</li><li>System- und Prozessanalyse</li><li>Technologische Projektbegleitung</li></>}
-              {title === "Architektur & Hochbau" && <><li>Planungs- und Projektberatung</li><li>Schnittstellenkoordination</li><li>Wirtschaftliche Projektbetrachtung</li></>}
-            </ul>
-          )}
         </article>
       ))}
     </div>
