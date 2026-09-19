@@ -20,3 +20,10 @@
 - [x] Professional-Structuralist-Richtung auswählen
 - [x] Startseite als umfangreiche Enterprise-Komposition ausbauen
 - [x] Desktop, Mobil, Verlinkungen und Überlauf prüfen
+
+# Enterprise-Unterseiten
+
+- [x] Structuralist-Enterprise-Richtung auswählen
+- [x] Leistungen, Über uns und Kontakt detailliert ausarbeiten
+- [x] Impressum und Datenschutz strukturell angleichen
+- [x] Alle Unterseiten auf Desktop und Mobil prüfen
