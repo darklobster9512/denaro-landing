@@ -85,10 +85,10 @@ function TeamPage() {
             <div className="grid min-w-0 border border-border bg-background sm:grid-cols-2 lg:col-span-9 lg:col-start-4 lg:grid-cols-3">
               {members.map((member, index) => (
                 <article key={member.name} className="group border-b border-border last:border-b-0 sm:border-r sm:[&:nth-child(2n)]:border-r-0 sm:[&:nth-last-child(2)]:border-b-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0 lg:[&:nth-last-child(3)]:border-b-0">
-                  <div className="aspect-[4/5] overflow-hidden">
-                    <img src={member.image} alt={member.name} className="size-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+                  <div className="flex justify-center p-6">
+                    <img src={member.image} alt={member.name} className="size-28 rounded-full object-cover object-top ring-1 ring-border transition-all duration-300 group-hover:ring-2 group-hover:ring-primary" loading="lazy" />
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 pt-0 text-center">
                     <span className="text-xs font-bold text-primary">{String(index + 2).padStart(2, "0")}/</span>
                     <h3 className="mt-3 font-display text-xl font-semibold leading-snug">{member.name}</h3>
                     <p className="mt-1.5 text-sm text-muted-foreground">{member.role}</p>
