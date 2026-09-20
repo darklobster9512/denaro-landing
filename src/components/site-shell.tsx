@@ -95,14 +95,14 @@ export function SiteHeader() {
 export function ContactBand() {
   return (
     <section className="line-pattern relative overflow-hidden border-y border-border bg-brand-blue-soft">
-      <div className="site-container relative grid gap-10 py-20 md:grid-cols-[1fr_auto] md:items-end md:py-28">
+      <div className="site-container relative grid gap-8 py-14 md:grid-cols-[1fr_auto] md:items-end md:gap-10 md:py-28">
         <div>
           <p className="eyebrow text-primary">Der nächste Schritt</p>
-          <h2 className="mt-5 max-w-3xl font-display text-4xl font-semibold leading-[1.08] md:text-6xl">
+          <h2 className="mt-5 max-w-3xl font-display text-3xl font-semibold leading-[1.1] sm:text-4xl md:text-6xl">
             Aus einer komplexen Aufgabe wird ein <span className="editorial text-primary">klarer Weg.</span>
           </h2>
         </div>
-        <Button asChild size="lg" className="h-14 rounded-sm px-8 shadow-sm hover:bg-brand-blue-deep">
+        <Button asChild size="lg" className="h-14 w-full rounded-sm px-8 shadow-sm hover:bg-brand-blue-deep sm:w-auto">
           <Link to="/kontakt">Gespräch beginnen <ArrowUpRight /></Link>
         </Button>
       </div>
@@ -113,7 +113,7 @@ export function ContactBand() {
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-background text-foreground">
-      <div className="site-container grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_0.8fr] lg:py-20">
+      <div className="site-container grid gap-10 py-12 md:grid-cols-2 md:gap-12 md:py-16 lg:grid-cols-[1.3fr_0.8fr_0.8fr] lg:py-20">
         <div>
           <p className="font-display text-2xl font-semibold">DENARO <span className="editorial text-primary">Consulting</span></p>
           <p className="mt-4 max-w-sm text-sm leading-7 text-muted-foreground">
@@ -123,8 +123,8 @@ export function SiteFooter() {
         <div className="text-sm leading-7">
           <p className="eyebrow text-primary">Kontakt</p>
           <p className="mt-3 text-muted-foreground">Mettlacher Straße 10<br />40468 Düsseldorf</p>
-          <a className="mt-2 block hover:text-primary" href="tel:+4921187971210">0211 87971210</a>
-          <a className="hover:text-primary" href="mailto:kontakt@denaro-consult.com">kontakt@denaro-consult.com</a>
+          <a className="tap-target mt-2 hover:text-primary" href="tel:+4921187971210">0211 87971210</a>
+          <a className="tap-target break-all hover:text-primary" href="mailto:kontakt@denaro-consult.com">kontakt@denaro-consult.com</a>
         </div>
         <div className="text-sm leading-8">
           <p className="eyebrow text-primary">Navigation</p>
