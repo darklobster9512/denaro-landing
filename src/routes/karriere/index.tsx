@@ -78,7 +78,7 @@ function KarrierePage() {
             </div>
             <div className="flex flex-col justify-center gap-4 p-8 md:col-span-3">
               <Button asChild size="lg" className="h-14 w-full rounded-none px-8 shadow-none">
-                <Link to="/karriere/bewerbung">Jetzt bewerben <ArrowUpRight /></Link>
+                <Link to="/karriere/bewerbung" search={{ stelle: "" }}>Jetzt bewerben <ArrowUpRight /></Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="h-14 w-full rounded-none px-8 shadow-none">
                 <a href="mailto:kontakt@denaro-consult.com?subject=Initiativbewerbung">E-Mail schreiben</a>

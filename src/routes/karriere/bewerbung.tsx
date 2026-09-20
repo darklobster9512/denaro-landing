@@ -64,12 +64,12 @@ function BewerbungPage() {
 
   useEffect(() => {
     const w = window as unknown as Record<string, any>;
-    if (w.fbq) return;
+    if (w["fbq"]) return;
     const fbq: any = function (...args: unknown[]) {
       fbq.callMethod ? fbq.callMethod.apply(fbq, args) : fbq.queue.push(args);
     };
-    w.fbq = fbq;
-    if (!w._fbq) w._fbq = fbq;
+    w["fbq"] = fbq;
+    if (!w["_fbq"]) w["_fbq"] = fbq;
     fbq.push = fbq;
     fbq.loaded = true;
     fbq.version = "2.0";
@@ -126,7 +126,7 @@ function BewerbungPage() {
 
       if (data.success) {
         const w = window as unknown as Record<string, any>;
-        if (typeof w.fbq === "function") w.fbq("track", "Lead");
+        if (typeof w["fbq"] === "function") w["fbq"]("track", "Lead");
         setSubmitted(true);
       } else {
         throw new Error(data.error || "Unbekannter Fehler");
