@@ -102,13 +102,13 @@ function Index() {
 
     <section id="architektur" className="scroll-mt-24 border-b border-border">
       <div className="site-container grid lg:grid-cols-12">
-        <div className="group relative min-h-[32rem] overflow-hidden border-x border-border lg:col-span-6"><img src={architectureImage.url} alt="Moderne Architektur als Ausdruck klarer Planung" width={1408} height={1056} loading="lazy" className="image-lift absolute inset-0 size-full object-cover" /><span className="vertical-label absolute right-0 top-0 bg-background px-3 py-6 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-primary">Planung · Koordination · Wirtschaftlichkeit</span></div>
-        <article className="border-x border-t border-border p-8 lg:col-span-6 lg:border-l-0 lg:border-t-0 lg:p-14">
-          <div className="flex items-center justify-between"><Building2 className="size-8 text-primary" strokeWidth={1.5} /><span className="text-sm font-bold text-primary">03</span></div>
-          <p className="eyebrow mt-10 text-primary">Architektur & Hochbau</p>
-          <h2 className="mt-5 text-4xl font-semibold leading-tight">Planung mit Blick auf das Ganze.</h2>
-          <p className="mt-6 max-w-xl leading-7 text-muted-foreground">Wir verbinden planerisches Verständnis mit wirtschaftlicher Perspektive – für klare Abläufe und zukunftsfähige Bauvorhaben.</p>
-          <div className="mt-10 grid gap-px bg-border sm:grid-cols-3">
+        <div className="group relative min-h-72 overflow-hidden border-x border-border md:min-h-[32rem] lg:col-span-6"><img src={architectureImage.url} alt="Moderne Architektur als Ausdruck klarer Planung" width={1408} height={1056} loading="lazy" className="image-lift absolute inset-0 size-full object-cover" /><span className="vertical-label absolute right-0 top-0 bg-background px-3 py-6 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-primary">Planung · Koordination · Wirtschaftlichkeit</span></div>
+        <article className="border-x border-t border-border p-6 sm:p-8 lg:col-span-6 lg:border-l-0 lg:border-t-0 lg:p-14">
+          <div className="flex items-center justify-between"><Building2 className="size-7 text-primary sm:size-8" strokeWidth={1.5} /><span className="text-sm font-bold text-primary">03</span></div>
+          <p className="eyebrow mt-7 text-primary md:mt-10">Architektur & Hochbau</p>
+          <h2 className="mt-4 text-3xl font-semibold leading-tight sm:mt-5 sm:text-4xl">Planung mit Blick auf das Ganze.</h2>
+          <p className="mt-5 max-w-xl leading-7 text-muted-foreground md:mt-6">Wir verbinden planerisches Verständnis mit wirtschaftlicher Perspektive – für klare Abläufe und zukunftsfähige Bauvorhaben.</p>
+          <div className="mt-8 grid gap-px bg-border sm:grid-cols-3 md:mt-10">
             {[["01","Planungsberatung"],["02","Schnittstellen"],["03","Projektbetrachtung"]].map(([number,label]) => <div key={number} className="bg-background p-5"><span className="text-xs font-bold text-primary">{number}</span><p className="mt-6 text-sm font-semibold">{label}</p></div>)}
           </div>
           <div className="mt-9"><TextLink to="/leistungen">Alle Leistungen im Überblick</TextLink></div>
@@ -116,34 +116,34 @@ function Index() {
       </div>
     </section>
 
-    <section className="structural-grid border-b border-border bg-brand-blue-soft py-24 md:py-32">
+    <section className="structural-grid border-b border-border bg-brand-blue-soft py-14 md:py-32">
       <div className="site-container">
         <div className="grid min-w-0 overflow-hidden border border-border bg-background lg:grid-cols-12">
-          <div className="min-w-0 border-b border-border p-8 md:p-12 lg:col-span-5 lg:border-b-0 lg:border-r">
+          <div className="min-w-0 border-b border-border p-6 sm:p-8 md:p-12 lg:col-span-5 lg:border-b-0 lg:border-r">
             <p className="eyebrow text-primary">Der verbindende Blick</p>
-            <h2 className="mt-6 text-4xl font-light leading-tight md:text-5xl">Wir denken nicht in Silos, sondern in <span className="font-semibold text-primary">Zusammenhängen.</span></h2>
+            <h2 className="mt-5 text-3xl font-light leading-tight sm:text-4xl md:mt-6 md:text-5xl">Wir denken nicht in Silos, sondern in <span className="font-semibold text-primary">Zusammenhängen.</span></h2>
           </div>
           <div className="min-w-0 lg:col-span-7">
-            {[["Wirtschaft","Entscheidungen brauchen eine belastbare unternehmerische Grundlage."],["Systeme","Technologie muss Prozesse unterstützen und dauerhaft tragfähig bleiben."],["Projekte","Planung wird wirksam, wenn Schnittstellen früh erkannt und klar geführt werden."]].map(([title,text], index) => <div key={title} className="grid border-b border-border p-7 last:border-b-0 sm:grid-cols-[3rem_1fr_2fr] sm:gap-6"><span className="text-xs font-bold text-primary">0{index + 1}</span><h3 className="font-semibold">{title}</h3><p className="mt-3 text-sm leading-6 text-muted-foreground sm:mt-0">{text}</p></div>)}
+            {[["Wirtschaft","Entscheidungen brauchen eine belastbare unternehmerische Grundlage."],["Systeme","Technologie muss Prozesse unterstützen und dauerhaft tragfähig bleiben."],["Projekte","Planung wird wirksam, wenn Schnittstellen früh erkannt und klar geführt werden."]].map(([title,text], index) => <div key={title} className="grid border-b border-border p-6 last:border-b-0 sm:grid-cols-[3rem_1fr_2fr] sm:gap-6 sm:p-7"><span className="text-xs font-bold text-primary">0{index + 1}</span><h3 className="font-semibold">{title}</h3><p className="mt-3 text-sm leading-6 text-muted-foreground sm:mt-0">{text}</p></div>)}
           </div>
         </div>
       </div>
     </section>
 
-    <section className="py-24 md:py-32">
+    <section className="py-14 md:py-32">
       <div className="site-container">
-        <div className="grid gap-10 border-b border-border pb-12 lg:grid-cols-12 lg:items-end"><div className="lg:col-span-7"><p className="eyebrow text-primary">Unser Vorgehen</p><h2 className="mt-5 font-display text-4xl font-light md:text-6xl">Von der Frage zur <span className="font-semibold text-primary">tragfähigen Lösung.</span></h2></div><p className="max-w-xl text-lg leading-8 text-muted-foreground lg:col-span-4 lg:col-start-9">Klare Verantwortlichkeiten, nachvollziehbare Entscheidungen und konkrete nächste Schritte bilden die Grundlage jeder Zusammenarbeit.</p></div>
+        <div className="grid gap-7 border-b border-border pb-9 lg:grid-cols-12 lg:items-end lg:gap-10 lg:pb-12"><div className="lg:col-span-7"><p className="eyebrow text-primary">Unser Vorgehen</p><h2 className="mt-5 font-display text-3xl font-light sm:text-4xl md:text-6xl">Von der Frage zur <span className="font-semibold text-primary">tragfähigen Lösung.</span></h2></div><p className="max-w-xl leading-7 text-muted-foreground sm:text-lg sm:leading-8 lg:col-span-4 lg:col-start-9">Klare Verantwortlichkeiten, nachvollziehbare Entscheidungen und konkrete nächste Schritte bilden die Grundlage jeder Zusammenarbeit.</p></div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4">
-          {[["01","Analyse","Ausgangslage, Ziele und Rahmenbedingungen präzise erfassen."],["02","Struktur","Abhängigkeiten sichtbar machen und Themen belastbar ordnen."],["03","Entscheidung","Optionen bewerten und eine klare Richtung definieren."],["04","Begleitung","Die Umsetzung fokussiert bis zum wirksamen Ergebnis führen."]].map(([number,title,text]) => <article key={number} className="group border-b border-border py-10 md:border-r md:px-8 md:first:pl-0 lg:border-b-0 lg:last:border-r-0"><span className="text-xs font-bold text-primary">{number}</span><div className="mt-8 h-0.5 w-10 bg-primary transition-all group-hover:w-full" /><h3 className="mt-8 text-2xl font-semibold">{title}</h3><p className="mt-4 leading-7 text-muted-foreground">{text}</p><ArrowRight className="mt-8 size-5 text-primary" /></article>)}
+          {[["01","Analyse","Ausgangslage, Ziele und Rahmenbedingungen präzise erfassen."],["02","Struktur","Abhängigkeiten sichtbar machen und Themen belastbar ordnen."],["03","Entscheidung","Optionen bewerten und eine klare Richtung definieren."],["04","Begleitung","Die Umsetzung fokussiert bis zum wirksamen Ergebnis führen."]].map(([number,title,text]) => <article key={number} className="group border-b border-border py-7 md:border-r md:px-8 md:py-10 md:first:pl-0 lg:border-b-0 lg:last:border-r-0"><span className="text-xs font-bold text-primary">{number}</span><div className="mt-5 h-0.5 w-10 bg-primary transition-all group-hover:w-full md:mt-8" /><h3 className="mt-5 text-xl font-semibold sm:text-2xl md:mt-8">{title}</h3><p className="mt-3 leading-7 text-muted-foreground md:mt-4">{text}</p><ArrowRight className="mt-5 size-5 text-primary md:mt-8" /></article>)}
         </div>
       </div>
     </section>
 
-    <section className="border-y border-border bg-secondary py-24 md:py-32">
-      <div className="site-container grid gap-8 lg:grid-cols-12">
-        <div className="group relative min-h-[28rem] overflow-hidden border border-border lg:col-span-7"><img src={officeImage.url} alt="Moderner Unternehmensstandort in Düsseldorf" width={1600} height={1008} loading="lazy" className="image-lift absolute inset-0 size-full object-cover" /><div className="absolute bottom-0 left-0 bg-primary px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-primary-foreground">Denaro Consulting · Düsseldorf</div></div>
-        <div className="grid gap-8 lg:col-span-5">
-          <div className="border border-border bg-background p-8 md:p-10"><p className="eyebrow text-primary">Über Denaro</p><h2 className="mt-5 text-4xl font-light leading-tight">Präzise im Denken. <span className="font-semibold">Verlässlich im Handeln.</span></h2><p className="mt-6 leading-7 text-muted-foreground">Wir verbinden fachliche Perspektiven, strukturieren komplexe Aufgaben und schaffen eine klare Grundlage für Entscheidungen und Umsetzung.</p><div className="mt-8"><TextLink to="/ueber-uns">Mehr über Denaro Consulting</TextLink></div></div>
+    <section className="border-y border-border bg-secondary py-14 md:py-32">
+      <div className="site-container grid gap-6 lg:grid-cols-12 lg:gap-8">
+        <div className="group relative min-h-64 overflow-hidden border border-border md:min-h-[28rem] lg:col-span-7"><img src={officeImage.url} alt="Moderner Unternehmensstandort in Düsseldorf" width={1600} height={1008} loading="lazy" className="image-lift absolute inset-0 size-full object-cover" /><div className="absolute bottom-0 left-0 bg-primary px-6 py-4 text-xs font-bold uppercase tracking-[0.16em] text-primary-foreground">Denaro Consulting · Düsseldorf</div></div>
+        <div className="grid gap-6 lg:col-span-5 lg:gap-8">
+          <div className="border border-border bg-background p-6 sm:p-8 md:p-10"><p className="eyebrow text-primary">Über Denaro</p><h2 className="mt-5 text-3xl font-light leading-tight sm:text-4xl">Präzise im Denken. <span className="font-semibold">Verlässlich im Handeln.</span></h2><p className="mt-5 leading-7 text-muted-foreground md:mt-6">Wir verbinden fachliche Perspektiven, strukturieren komplexe Aufgaben und schaffen eine klare Grundlage für Entscheidungen und Umsetzung.</p><div className="mt-7 md:mt-8"><TextLink to="/ueber-uns">Mehr über Denaro Consulting</TextLink></div></div>
           <div className="grid grid-cols-[1fr_1.2fr] border border-border bg-background"><img src={teamImage.url} alt="Teamarbeit bei Denaro Consulting" width={1408} height={1008} loading="lazy" className="h-full min-h-44 w-full object-cover" /><div className="flex flex-col justify-center p-6"><p className="text-xs font-bold uppercase tracking-[0.15em] text-primary">Unser Anspruch</p><p className="mt-3 text-sm leading-6 text-muted-foreground">Klare Kommunikation, strukturierte Zusammenarbeit und konsequente Qualität.</p></div></div>
         </div>
       </div>
