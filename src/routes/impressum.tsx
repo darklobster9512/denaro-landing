@@ -9,6 +9,7 @@ export const Route = createFileRoute("/impressum")({
     { property: "og:description", content: "Rechtliche Anbieterinformationen der Denaro Consulting GmbH." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary" },
+    { name: "robots", content: "noindex" },
   ] }),
   component: ImpressumPage,
 });

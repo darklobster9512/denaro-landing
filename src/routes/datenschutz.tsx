@@ -9,6 +9,7 @@ export const Route = createFileRoute("/datenschutz")({
     { property: "og:description", content: "Informationen zum Datenschutz auf dieser Website." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary" },
+    { name: "robots", content: "noindex" },
   ] }),
   component: DatenschutzPage,
 });

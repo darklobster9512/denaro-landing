@@ -6,10 +6,10 @@ import { ContactBand } from "@/components/site-shell";
 
 export const Route = createFileRoute("/leistungen")({
   head: () => ({ meta: [
-    { title: "Leistungen | Denaro Consulting GmbH" },
-    { name: "description", content: "Unternehmensberatung, IT-Beratung und Architekturleistungen von Denaro Consulting in Düsseldorf." },
-    { property: "og:title", content: "Leistungen | Denaro Consulting" },
-    { property: "og:description", content: "Drei Kompetenzfelder für klare, tragfähige Lösungen." },
+    { title: "Leistungen: Beratung, IT & Architektur | Denaro Consulting" },
+    { name: "description", content: "Unsere Leistungen: Unternehmensberatung, IT-Beratung und Architektur für Hochbau – interdisziplinär verzahnt, von der Analyse bis zur Umsetzung." },
+    { property: "og:title", content: "Leistungen: Beratung, IT & Architektur | Denaro Consulting" },
+    { property: "og:description", content: "Drei Kompetenzfelder für klare, tragfähige Lösungen – von der Analyse bis zur Umsetzung." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
   ] }),

@@ -79,8 +79,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Denaro Consulting GmbH" },
-      { name: "description", content: "Unternehmensberatung, IT-Beratung und Architektur in Düsseldorf." },
+      { title: "Denaro Consulting GmbH | Unternehmensberatung & IT-Beratung Düsseldorf" },
+      { name: "description", content: "Denaro Consulting GmbH aus Düsseldorf: Unternehmensberatung, IT-Beratung und Architektur für Hochbau – strukturiert, persönlich und lösungsorientiert." },
       { name: "author", content: "Denaro Consulting GmbH" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

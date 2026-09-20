@@ -14,10 +14,10 @@ import frau2Asset from "@/assets/team-frau_2.png.asset.json";
 
 export const Route = createFileRoute("/team")({
   head: () => ({ meta: [
-    { title: "Team | Denaro Consulting GmbH" },
-    { name: "description", content: "Das Team der Denaro Consulting GmbH in Düsseldorf: Geschäftsführung, Projektleitung, Recruiting und Beratung." },
-    { property: "og:title", content: "Team | Denaro Consulting" },
-    { property: "og:description", content: "Die Menschen hinter Denaro Consulting." },
+    { title: "Unser Team | Denaro Consulting GmbH Düsseldorf" },
+    { name: "description", content: "Das Team der Denaro Consulting GmbH in Düsseldorf: Geschäftsführung, Projektleitung, Recruiting und Beratung aus einer Hand." },
+    { property: "og:title", content: "Unser Team | Denaro Consulting GmbH Düsseldorf" },
+    { property: "og:description", content: "Die Menschen hinter Denaro Consulting – von der Geschäftsführung bis zur Beratung." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
   ] }),

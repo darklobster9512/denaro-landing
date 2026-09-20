@@ -7,10 +7,10 @@ import { stellen } from "@/data/karriere-stellen";
 
 export const Route = createFileRoute("/karriere/")({
   head: () => ({ meta: [
-    { title: "Karriere | Denaro Consulting GmbH" },
-    { name: "description", content: "Offene Stellen bei Denaro Consulting in Düsseldorf – Beratung, IT, Architektur und flexible Tätigkeiten im Onlineprozess-Test." },
-    { property: "og:title", content: "Karriere | Denaro Consulting" },
-    { property: "og:description", content: "Offene Positionen und Bewerbung bei Denaro Consulting in Düsseldorf." },
+    { title: "Karriere & offene Stellen | Denaro Consulting Düsseldorf" },
+    { name: "description", content: "Offene Stellen bei der Denaro Consulting GmbH in Düsseldorf: Beratung, IT, Architektur und flexible Tätigkeiten im Onlineprozess-Test. Jetzt bewerben." },
+    { property: "og:title", content: "Karriere & offene Stellen | Denaro Consulting Düsseldorf" },
+    { property: "og:description", content: "Offene Positionen und einfache Bewerbung bei Denaro Consulting in Düsseldorf." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
   ] }),

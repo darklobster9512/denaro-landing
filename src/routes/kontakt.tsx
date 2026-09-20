@@ -20,10 +20,10 @@ import { Textarea } from "@/components/ui/textarea";
 
 export const Route = createFileRoute("/kontakt")({
   head: () => ({ meta: [
-    { title: "Kontakt | Denaro Consulting GmbH" },
-    { name: "description", content: "Kontaktieren Sie Denaro Consulting in Düsseldorf telefonisch, per E-Mail oder über das Kontaktformular." },
-    { property: "og:title", content: "Kontakt | Denaro Consulting" },
-    { property: "og:description", content: "Sprechen wir über Ihr nächstes Vorhaben." },
+    { title: "Kontakt & Beratungsanfrage | Denaro Consulting Düsseldorf" },
+    { name: "description", content: "Nehmen Sie Kontakt zur Denaro Consulting GmbH in Düsseldorf auf – telefonisch, per E-Mail oder über unser Kontaktformular. Wir melden uns zeitnah." },
+    { property: "og:title", content: "Kontakt & Beratungsanfrage | Denaro Consulting Düsseldorf" },
+    { property: "og:description", content: "Sprechen wir über Ihr nächstes Vorhaben – telefonisch, per E-Mail oder per Formular." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
   ] }),
