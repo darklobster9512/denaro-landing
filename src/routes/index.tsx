@@ -13,10 +13,10 @@ import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
-    { title: "Denaro Consulting | Beratung, IT & Architektur in Düsseldorf" },
-    { name: "description", content: "Denaro Consulting verbindet Unternehmensberatung, IT-Kompetenz und Architektur für klare Entscheidungen und tragfähige Lösungen." },
-    { property: "og:title", content: "Denaro Consulting GmbH" },
-    { property: "og:description", content: "Beratung, Technologie und Architektur aus einer Hand – mit Sitz in Düsseldorf." },
+    { title: "Denaro Consulting | Unternehmensberatung, IT & Architektur Düsseldorf" },
+    { name: "description", content: "Denaro Consulting GmbH Düsseldorf: Unternehmensberatung, IT-Beratung und Architektur für Hochbau – für klare Entscheidungen und tragfähige Lösungen." },
+    { property: "og:title", content: "Denaro Consulting | Unternehmensberatung, IT & Architektur Düsseldorf" },
+    { property: "og:description", content: "Unternehmensberatung, IT-Beratung und Architektur aus einer Hand – mit Sitz in Düsseldorf." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
   ] }),

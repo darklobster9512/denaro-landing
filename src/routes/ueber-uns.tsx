@@ -7,9 +7,9 @@ import { PageIntro } from "@/components/page-sections";
 
 export const Route = createFileRoute("/ueber-uns")({
   head: () => ({ meta: [
-    { title: "Über uns | Denaro Consulting GmbH" },
-    { name: "description", content: "Lernen Sie Denaro Consulting und unsere interdisziplinäre Arbeitsweise kennen." },
-    { property: "og:title", content: "Über Denaro Consulting" },
+    { title: "Über uns | Denaro Consulting GmbH aus Düsseldorf" },
+    { name: "description", content: "Lernen Sie die Denaro Consulting GmbH kennen: eine Düsseldorfer Beratung, die Strategie, Technologie und Architektur interdisziplinär verbindet." },
+    { property: "og:title", content: "Über uns | Denaro Consulting GmbH aus Düsseldorf" },
     { property: "og:description", content: "Persönlich, interdisziplinär und konsequent lösungsorientiert." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
