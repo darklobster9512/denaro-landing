@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import teamImage from "@/assets/denaro-boardroom-stock.jpg.asset.json";
-import officeImage from "@/assets/denaro-duesseldorf-stock-day.jpg.asset.json";
+const teamImage = { url: "/images/denaro-boardroom-stock.jpg" };
+const officeImage = { url: "/images/denaro-duesseldorf-stock-day.jpg" };
 import { ContactBand } from "@/components/site-shell";
 import { PageIntro } from "@/components/page-sections";
 
