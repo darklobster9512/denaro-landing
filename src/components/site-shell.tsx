@@ -1,6 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Mail, Menu, Phone } from "lucide-react";
 
+import logoAsset from "@/assets/denaro-logo.png.asset.json";
+
+
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -23,14 +26,8 @@ const navItems = [
 
 export function Brand() {
   return (
-    <Link to="/" className="group inline-flex items-center gap-3.5" aria-label="Denaro Consulting Startseite">
-      <span className="relative grid size-11 place-items-center overflow-hidden rounded-sm bg-primary font-display text-lg font-semibold text-primary-foreground shadow-sm">
-        <span className="absolute right-0 top-0 h-1 w-5 bg-brand-blue-deep" />D
-      </span>
-      <span className="leading-none">
-        <span className="block font-display text-lg font-semibold text-foreground">DENARO</span>
-        <span className="mt-1.5 block text-[0.7rem] font-semibold tracking-[0.16em] text-muted-foreground md:text-[0.61rem] md:tracking-[0.2em]">CONSULTING</span>
-      </span>
+    <Link to="/" className="group inline-flex items-center" aria-label="Denaro Consulting Startseite">
+      <img src={logoAsset.url} alt="Denaro Consulting" className="h-8 w-auto md:h-9" width="1528" height="355" />
     </Link>
   );
 }
@@ -115,7 +112,7 @@ export function SiteFooter() {
     <footer className="border-t border-border bg-background text-foreground">
       <div className="site-container grid gap-10 py-12 md:grid-cols-2 md:gap-12 md:py-16 lg:grid-cols-[1.3fr_0.8fr_0.8fr] lg:py-20">
         <div>
-          <p className="font-display text-2xl font-semibold">DENARO <span className="editorial text-primary">Consulting</span></p>
+          <img src={logoAsset.url} alt="Denaro Consulting" className="h-8 w-auto" width="1528" height="355" />
           <p className="mt-4 max-w-sm text-sm leading-7 text-muted-foreground">
             Unternehmensberatung, Informationstechnologie und Architektur mit klarer Perspektive und verlässlicher Umsetzung.
           </p>
