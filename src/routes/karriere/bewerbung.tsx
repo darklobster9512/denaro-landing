@@ -152,30 +152,33 @@ function BewerbungPage() {
 
   return (
     <>
-      <section className="structural-grid border-b border-border bg-secondary py-8 md:py-12">
+      <section className="structural-grid border-b border-border bg-secondary py-6 md:py-12">
         <div className="site-container border border-border bg-background md:structural-shadow">
           <div className="grid min-w-0 overflow-hidden lg:grid-cols-12">
-            <div className="border-b border-border p-7 lg:col-span-2 lg:border-b-0 lg:border-r lg:p-10">
+            <div className="hidden border-b border-border p-7 lg:col-span-2 lg:block lg:border-b-0 lg:border-r lg:p-10">
               <span className="text-sm font-bold text-primary">05/</span>
-              <p className="vertical-label mt-12 hidden text-[0.65rem] font-bold uppercase tracking-[0.2em] text-muted-foreground lg:block">Bewerbung · Düsseldorf</p>
+              <p className="vertical-label mt-12 hidden text-[0.7rem] font-bold uppercase tracking-[0.2em] text-muted-foreground lg:block">Bewerbung · Düsseldorf</p>
             </div>
-            <div className="border-b border-border p-7 md:p-12 lg:col-span-6 lg:border-b-0 lg:border-r lg:p-14">
-              <p className="eyebrow text-primary">Karriere</p>
-              <h1 className="mt-7 max-w-4xl break-words font-display text-4xl font-light leading-[1.02] sm:text-5xl md:text-7xl">Ihre Bewerbung.</h1>
+            <div className="border-b border-border p-6 sm:p-8 md:p-12 lg:col-span-6 lg:border-b-0 lg:border-r lg:p-14">
+              <div className="flex items-center gap-3">
+                <span className="text-sm font-bold text-primary lg:hidden">05/</span>
+                <p className="eyebrow min-w-0 text-primary">Karriere</p>
+              </div>
+              <h1 className="mt-5 max-w-4xl break-words font-display text-[2rem] font-light leading-[1.08] sm:text-5xl sm:leading-[1.02] md:mt-7 md:text-7xl">Ihre Bewerbung.</h1>
             </div>
-            <div className="flex flex-col justify-end p-7 md:p-10 lg:col-span-4">
-              <span className="mb-8 h-0.5 w-12 bg-primary" />
-              <p className="max-w-md text-lg leading-8 text-muted-foreground">Zwei kurze Schritte – Kontaktdaten und Rahmenbedingungen. Wir melden uns persönlich bei Ihnen zurück.</p>
+            <div className="flex flex-col justify-end p-6 sm:p-8 md:p-10 lg:col-span-4">
+              <span className="mb-5 h-0.5 w-12 bg-primary md:mb-8" />
+              <p className="max-w-md leading-7 text-muted-foreground sm:text-lg sm:leading-8">Zwei kurze Schritte – Kontaktdaten und Rahmenbedingungen. Wir melden uns persönlich bei Ihnen zurück.</p>
             </div>
           </div>
-          <div className="flex items-center justify-between border-t border-border px-7 py-4 text-[0.68rem] font-bold uppercase tracking-[0.17em] text-muted-foreground">
-            <Link to="/karriere" className="hover:text-primary">← Alle Stellen</Link>
-            <span className="text-primary">Denaro Consulting GmbH</span>
+          <div className="flex items-center justify-between gap-4 border-t border-border px-6 py-3 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-muted-foreground sm:px-7 sm:py-4 sm:tracking-[0.17em]">
+            <Link to="/karriere" className="inline-flex min-h-11 items-center hover:text-primary sm:min-h-0">← Alle Stellen</Link>
+            <span className="text-right text-primary">Denaro Consulting GmbH</span>
           </div>
         </div>
       </section>
 
-      <section className="py-24 md:py-32">
+      <section className="py-14 md:py-32">
         <div className="site-container">
           <div className="grid lg:grid-cols-12">
             <div className="hidden lg:col-span-2 lg:block"><span className="vertical-label text-muted-foreground">Bewerbung — 01</span></div>
@@ -183,19 +186,19 @@ function BewerbungPage() {
               {submitted ? (
                 <div className="border border-border">
                   <div className="h-1 w-full bg-primary" aria-hidden="true" />
-                  <div className="px-6 py-14 text-center md:px-12">
-                    <CheckCircle2 className="mx-auto size-12 text-primary" strokeWidth={1.5} />
-                    <p className="eyebrow mt-8 text-primary">Erfolgreich gesendet</p>
-                    <h2 className="mt-5 font-display text-3xl font-light md:text-4xl">Ihre Bewerbung ist <span className="font-semibold text-primary">eingegangen.</span></h2>
+                  <div className="px-6 py-12 text-center md:px-12 md:py-14">
+                    <CheckCircle2 className="mx-auto size-11 text-primary md:size-12" strokeWidth={1.5} />
+                    <p className="eyebrow mt-7 text-primary md:mt-8">Erfolgreich gesendet</p>
+                    <h2 className="mt-5 font-display text-2xl font-light sm:text-3xl md:text-4xl">Ihre Bewerbung ist <span className="font-semibold text-primary">eingegangen.</span></h2>
                     <p className="mx-auto mt-5 max-w-md leading-7 text-muted-foreground">Vielen Dank. Wir sichten Ihre Unterlagen und melden uns in Kürze bei Ihnen.</p>
-                    <Button onClick={handleReset} variant="outline" size="lg" className="mt-10 h-14 rounded-none px-8 shadow-none">
+                    <Button onClick={handleReset} variant="outline" size="lg" className="mt-9 h-14 w-full rounded-none px-8 shadow-none sm:w-auto">
                       <RotateCcw className="size-4" /> Neue Bewerbung senden
                     </Button>
                   </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="border border-border">
-                  <div className="flex flex-wrap items-center gap-x-8 gap-y-4 border-b border-border bg-brand-blue-soft px-6 py-5 md:px-10">
+                  <div className="flex flex-wrap items-center gap-x-6 gap-y-3 border-b border-border bg-brand-blue-soft px-5 py-4 sm:gap-x-8 sm:px-6 sm:py-5 md:px-10">
                     {stepMeta.map((meta, metaIndex) => {
                       const active = step === metaIndex + 1;
                       const done = step > metaIndex + 1;
@@ -206,11 +209,11 @@ function BewerbungPage() {
                         </span>
                       );
                     })}
-                    <span className="ml-auto text-xs text-muted-foreground">Pflichtfelder mit <span className="text-primary">*</span></span>
+                    <span className="w-full text-xs text-muted-foreground sm:ml-auto sm:w-auto">Pflichtfelder mit <span className="text-primary">*</span></span>
                   </div>
 
                   {step === 1 ? (
-                    <div className="grid gap-x-10 gap-y-8 px-6 py-8 md:grid-cols-2 md:px-10 md:py-10">
+                    <div className="grid gap-x-10 gap-y-7 px-5 py-7 sm:px-6 sm:py-8 md:grid-cols-2 md:px-10 md:py-10">
                       <div className="space-y-3 md:col-span-2">
                         <FieldLabel htmlFor="stelle">Stelle</FieldLabel>
                         <Select value={form.stelle} onValueChange={(value) => setForm({ ...form, stelle: value })}>
@@ -242,12 +245,12 @@ function BewerbungPage() {
                       </div>
                       <div className="space-y-4 md:col-span-2">
                         <FieldLabel htmlFor="staatsangehoerigkeit-ja" required>Besitzen Sie die deutsche Staatsbürgerschaft?</FieldLabel>
-                        <div className="flex flex-wrap gap-4">
+                        <div className="flex flex-wrap gap-3 sm:gap-4">
                           {[{ value: "ja", label: "Ja" }, { value: "nein", label: "Nein" }].map((option) => (
                             <label
                               key={option.value}
                               htmlFor={`staatsangehoerigkeit-${option.value}`}
-                              className={`inline-flex cursor-pointer items-center gap-3 border px-5 py-3 text-sm font-semibold transition-colors ${form.staatsangehoerigkeit === option.value ? "border-primary bg-brand-blue-soft text-foreground" : "border-border text-muted-foreground hover:border-primary/60"}`}
+                              className={`inline-flex min-h-12 min-w-24 cursor-pointer items-center justify-center gap-3 border px-5 text-sm font-semibold transition-colors ${form.staatsangehoerigkeit === option.value ? "border-primary bg-brand-blue-soft text-foreground" : "border-border text-muted-foreground hover:border-primary/60"}`}
                             >
                               <input
                                 id={`staatsangehoerigkeit-${option.value}`}
@@ -270,13 +273,13 @@ function BewerbungPage() {
                       </div>
                       {error && <p className="text-sm font-medium text-destructive md:col-span-2">{error}</p>}
                       <div className="md:col-span-2">
-                        <Button type="button" onClick={handleNext} disabled={form.staatsangehoerigkeit === "nein"} size="lg" className="h-16 w-full rounded-none px-12 text-base shadow-none md:w-auto">
+                        <Button type="button" onClick={handleNext} disabled={form.staatsangehoerigkeit === "nein"} size="lg" className="h-14 w-full rounded-none px-12 text-base shadow-none md:h-16 md:w-auto">
                           Weiter <ArrowRight />
                         </Button>
                       </div>
                     </div>
                   ) : (
-                    <div className="grid gap-x-10 gap-y-8 px-6 py-8 md:grid-cols-2 md:px-10 md:py-10">
+                    <div className="grid gap-x-10 gap-y-7 px-5 py-7 sm:px-6 sm:py-8 md:grid-cols-2 md:px-10 md:py-10">
                       <div className="space-y-3">
                         <FieldLabel htmlFor="anstellungsart" required>Anstellungsart</FieldLabel>
                         <Select value={form.anstellungsart} onValueChange={(value) => setForm({ ...form, anstellungsart: value })}>
@@ -303,11 +306,11 @@ function BewerbungPage() {
                         <Input id="stadt" name="stadt" value={form.stadt} onChange={handleChange} autoComplete="address-level2" placeholder="Düsseldorf" className={fieldClass} />
                       </div>
                       {error && <p className="text-sm font-medium text-destructive md:col-span-2">{error}</p>}
-                      <div className="flex flex-col gap-4 md:col-span-2 md:flex-row md:items-center">
-                        <Button type="button" variant="outline" onClick={() => setStep(1)} size="lg" className="h-16 rounded-none px-8 shadow-none">
+                      <div className="flex flex-col-reverse gap-3 md:col-span-2 md:flex-row md:items-center md:gap-4">
+                        <Button type="button" variant="outline" onClick={() => setStep(1)} size="lg" className="h-14 rounded-none px-8 shadow-none md:h-16">
                           <ArrowLeft /> Zurück
                         </Button>
-                        <Button type="submit" disabled={submitting} size="lg" className="h-16 rounded-none px-12 text-base shadow-none">
+                        <Button type="submit" disabled={submitting} size="lg" className="h-14 rounded-none px-12 text-base shadow-none md:h-16">
                           {submitting ? <>Wird gesendet … <Loader2 className="animate-spin" /></> : <>Bewerbung senden <ArrowUpRight /></>}
                         </Button>
                       </div>
