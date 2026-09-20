@@ -58,11 +58,11 @@ function ContactForm() {
       >
         {/* Gruppe 01 — Angaben */}
         <div className="border-b border-border">
-          <div className="flex items-baseline gap-6 border-b border-border bg-brand-blue-soft px-6 py-5 md:px-10">
+          <div className="flex items-baseline gap-4 border-b border-border bg-brand-blue-soft px-5 py-4 sm:gap-6 sm:px-6 sm:py-5 md:px-10">
             <span className="text-sm font-bold text-primary">01</span>
             <p className="eyebrow text-foreground">Ihre Angaben</p>
           </div>
-          <div className="grid gap-x-10 gap-y-8 px-6 py-8 md:grid-cols-2 md:px-10 md:py-10">
+          <div className="grid gap-x-10 gap-y-7 px-5 py-7 sm:px-6 sm:py-8 md:grid-cols-2 md:px-10 md:py-10">
             <div className="space-y-3">
               <FieldLabel htmlFor="name" required>Name</FieldLabel>
               <Input id="name" name="name" required autoComplete="name" placeholder="Vor- und Nachname" className={fieldClass} />
@@ -84,11 +84,11 @@ function ContactForm() {
 
         {/* Gruppe 02 — Vorhaben */}
         <div className="border-b border-border">
-          <div className="flex items-baseline gap-6 border-b border-border bg-brand-blue-soft px-6 py-5 md:px-10">
+          <div className="flex items-baseline gap-4 border-b border-border bg-brand-blue-soft px-5 py-4 sm:gap-6 sm:px-6 sm:py-5 md:px-10">
             <span className="text-sm font-bold text-primary">02</span>
             <p className="eyebrow text-foreground">Ihr Vorhaben</p>
           </div>
-          <div className="grid gap-x-10 gap-y-8 px-6 py-8 md:px-10 md:py-10">
+          <div className="grid gap-x-10 gap-y-7 px-5 py-7 sm:px-6 sm:py-8 md:px-10 md:py-10">
             <div className="space-y-3">
               <FieldLabel htmlFor="topic" required>Thema</FieldLabel>
               <Select name="topic" required>
@@ -111,14 +111,14 @@ function ContactForm() {
         </div>
 
         {/* Abschluss */}
-        <div className="px-6 py-8 md:px-10 md:py-10">
+        <div className="px-5 py-7 sm:px-6 sm:py-8 md:px-10 md:py-10">
           <div className="flex items-start gap-4">
-            <Checkbox id="privacy" required className="mt-1 size-5 rounded-none" />
+            <Checkbox id="privacy" required className="mt-1 size-6 shrink-0 rounded-none sm:size-5" />
             <Label htmlFor="privacy" className="text-sm font-normal leading-7 text-muted-foreground">
               Ich habe die <Link to="/datenschutz" className="font-medium text-primary underline underline-offset-4">Datenschutzerklärung</Link> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden. <span className="text-primary" aria-hidden="true">*</span>
             </Label>
           </div>
-          <div className="mt-10 flex flex-col gap-6 border-t border-border pt-8 md:flex-row md:items-center md:justify-between">
+          <div className="mt-8 flex flex-col gap-6 border-t border-border pt-7 md:mt-10 md:flex-row md:items-center md:justify-between md:pt-8">
             <p className="text-sm leading-6 text-muted-foreground">
               Pflichtfelder sind mit <span className="text-primary" aria-hidden="true">*</span> gekennzeichnet.<br />
               Wir melden uns persönlich bei Ihnen zurück.
@@ -134,24 +134,24 @@ function ContactForm() {
         setDialogOpen(open);
         if (!open) formRef.current?.reset();
       }}>
-        <DialogContent className="max-w-lg rounded-none border-border p-0">
+        <DialogContent className="max-h-[85vh] w-[92vw] max-w-lg overflow-y-auto rounded-none border-border p-0">
           <div className="h-1 w-full bg-primary" aria-hidden="true" />
-          <DialogHeader className="px-8 pt-8 md:px-10">
-            <CheckCircle2 className="mb-6 size-10 text-primary" strokeWidth={1.5} />
-            <DialogTitle className="font-display text-2xl font-light leading-tight md:text-3xl">
+          <DialogHeader className="px-6 pt-7 sm:px-8 sm:pt-8 md:px-10">
+            <CheckCircle2 className="mb-5 size-9 text-primary sm:mb-6 sm:size-10" strokeWidth={1.5} />
+            <DialogTitle className="font-display text-xl font-light leading-tight sm:text-2xl md:text-3xl">
               Vielen Dank für <span className="font-semibold text-primary">Ihre Anfrage.</span>
             </DialogTitle>
             <DialogDescription className="pt-4 text-sm leading-7">
               Ihre Anfrage ist bei uns eingegangen. Wir melden uns persönlich bei Ihnen zurück.
             </DialogDescription>
           </DialogHeader>
-          <div className="border-t border-border bg-brand-blue-soft px-8 py-5 md:px-10">
-            <p className="text-xs leading-6 text-muted-foreground">
+          <div className="border-t border-border bg-brand-blue-soft px-6 py-5 sm:px-8 md:px-10">
+            <p className="text-[0.8rem] leading-6 text-muted-foreground">
               Hinweis: Dieses Formular ist aktuell ein Entwurf und versendet noch keine Daten. Bitte richten Sie Ihre Anfrage direkt an{" "}
               <a href="mailto:kontakt@denaro-consult.com" className="font-medium text-primary underline underline-offset-4">kontakt@denaro-consult.com</a>.
             </p>
           </div>
-          <DialogFooter className="px-8 pb-8 pt-6 md:px-10">
+          <DialogFooter className="px-6 pb-7 pt-6 sm:px-8 sm:pb-8 md:px-10">
             <Button onClick={() => { setDialogOpen(false); formRef.current?.reset(); }} size="lg" className="h-12 w-full rounded-none px-10 shadow-none sm:w-auto">
               Schließen
             </Button>
@@ -165,12 +165,12 @@ function ContactForm() {
 function KontaktPage() {
   return <>
     <PageIntro eyebrow="Direkter Kontakt" title="Der direkte Weg zu uns." text="Sie haben eine konkrete Aufgabe oder möchten eine erste Einschätzung? Rufen Sie uns an, schreiben Sie eine E-Mail oder nutzen Sie das Kontaktformular." number="03" />
-    <section className="py-24 md:py-32">
+    <section className="py-14 md:py-32">
       <div className="site-container">
-        <div className="mb-12 grid gap-8 border-b border-border pb-10 lg:grid-cols-12"><p className="eyebrow text-primary lg:col-span-3">Kontaktpunkte</p><h2 className="font-display text-3xl font-light leading-tight lg:col-span-6 lg:col-start-7 md:text-4xl">Persönlich erreichbar. <span className="font-semibold text-primary">Klar im Austausch.</span></h2></div>
+        <div className="mb-10 grid gap-5 border-b border-border pb-8 md:mb-12 md:gap-8 md:pb-10 lg:grid-cols-12"><p className="eyebrow text-primary lg:col-span-3">Kontaktpunkte</p><h2 className="font-display text-2xl font-light leading-tight sm:text-3xl lg:col-span-6 lg:col-start-7 md:text-4xl">Persönlich erreichbar. <span className="font-semibold text-primary">Klar im Austausch.</span></h2></div>
         <ContactDetails />
-        <div className="mt-20 md:mt-28">
-          <div className="mb-12 grid gap-8 border-b border-border pb-10 lg:grid-cols-12"><p className="eyebrow text-primary lg:col-span-3">Kontaktformular</p><h2 className="font-display text-3xl font-light leading-tight lg:col-span-6 lg:col-start-7 md:text-4xl">Unverbindlich anfragen. <span className="font-semibold text-primary">Wir melden uns persönlich zurück.</span></h2></div>
+        <div className="mt-14 md:mt-28">
+          <div className="mb-10 grid gap-5 border-b border-border pb-8 md:mb-12 md:gap-8 md:pb-10 lg:grid-cols-12"><p className="eyebrow text-primary lg:col-span-3">Kontaktformular</p><h2 className="font-display text-2xl font-light leading-tight sm:text-3xl lg:col-span-6 lg:col-start-7 md:text-4xl">Unverbindlich anfragen. <span className="font-semibold text-primary">Wir melden uns persönlich zurück.</span></h2></div>
           <div className="grid lg:grid-cols-12">
             <div className="hidden lg:col-span-2 lg:block"><span className="vertical-label text-muted-foreground">Anfrage — 05</span></div>
             <div className="min-w-0 lg:col-span-9 lg:col-start-4">
@@ -178,10 +178,10 @@ function KontaktPage() {
             </div>
           </div>
         </div>
-        <div className="structural-grid mt-20 grid border border-border bg-brand-blue-soft md:mt-28 md:grid-cols-12">
-          <div className="border-b border-border p-8 md:col-span-2 md:border-b-0 md:border-r md:p-10"><span className="text-sm font-bold text-primary">06/</span></div>
-          <div className="border-b border-border p-8 md:col-span-7 md:border-b-0 md:border-r md:p-12"><p className="eyebrow text-primary">Direkt per E-Mail</p><h2 className="mt-6 font-display text-3xl font-light md:text-5xl">Wie können wir Sie <span className="font-semibold text-primary">unterstützen?</span></h2><p className="mt-5 max-w-2xl leading-7 text-muted-foreground">Beschreiben Sie uns kurz Ihr Vorhaben. Wir melden uns persönlich bei Ihnen zurück.</p></div>
-          <div className="flex items-center p-8 md:col-span-3"><Button asChild size="lg" className="h-14 w-full rounded-none px-8 shadow-none"><a href="mailto:kontakt@denaro-consult.com?subject=Anfrage%20über%20die%20Website">E-Mail schreiben <ArrowUpRight /></a></Button></div>
+        <div className="structural-grid mt-14 grid border border-border bg-brand-blue-soft md:mt-28 md:grid-cols-12">
+          <div className="hidden border-b border-border p-8 md:col-span-2 md:block md:border-b-0 md:border-r md:p-10"><span className="text-sm font-bold text-primary">06/</span></div>
+          <div className="border-b border-border p-6 sm:p-8 md:col-span-7 md:border-b-0 md:border-r md:p-12"><p className="eyebrow text-primary">Direkt per E-Mail</p><h2 className="mt-5 font-display text-2xl font-light sm:text-3xl md:mt-6 md:text-5xl">Wie können wir Sie <span className="font-semibold text-primary">unterstützen?</span></h2><p className="mt-4 max-w-2xl leading-7 text-muted-foreground md:mt-5">Beschreiben Sie uns kurz Ihr Vorhaben. Wir melden uns persönlich bei Ihnen zurück.</p></div>
+          <div className="flex items-center p-6 sm:p-8 md:col-span-3"><Button asChild size="lg" className="h-14 w-full rounded-none px-8 shadow-none"><a href="mailto:kontakt@denaro-consult.com?subject=Anfrage%20über%20die%20Website">E-Mail schreiben <ArrowUpRight /></a></Button></div>
         </div>
       </div>
     </section>
