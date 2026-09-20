@@ -110,7 +110,7 @@ export function ContactBand() {
 export function SiteFooter() {
   return (
     <footer className="bg-background text-foreground">
-      <div className="site-container pb-8 pt-2 md:pb-12">
+      <div className="site-container pb-10 pt-10 md:pb-14 md:pt-16">
         <div className="border border-border bg-card shadow-sm">
           <div className="grid grid-cols-1 md:grid-cols-12">
             {/* Identität */}
