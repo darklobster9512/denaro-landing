@@ -36,23 +36,26 @@ export const services = [
 
 export function PageIntro({ eyebrow, title, text, number = "01" }: { eyebrow: string; title: string; text: string; number?: string }) {
   return (
-    <section className="structural-grid border-b border-border bg-secondary py-8 md:py-12">
+    <section className="structural-grid border-b border-border bg-secondary py-6 md:py-12">
       <div className="site-container border border-border bg-background md:structural-shadow">
         <div className="grid min-w-0 overflow-hidden lg:grid-cols-12">
-          <div className="border-b border-border p-7 lg:col-span-2 lg:border-b-0 lg:border-r lg:p-10">
+          <div className="hidden border-b border-border p-7 lg:col-span-2 lg:block lg:border-b-0 lg:border-r lg:p-10">
             <span className="text-sm font-bold text-primary">{number}/</span>
-            <p className="vertical-label mt-12 hidden text-[0.65rem] font-bold uppercase tracking-[0.2em] text-muted-foreground lg:block">Denaro Consulting · Düsseldorf</p>
+            <p className="vertical-label mt-12 hidden text-[0.7rem] font-bold uppercase tracking-[0.2em] text-muted-foreground lg:block">Denaro Consulting · Düsseldorf</p>
           </div>
-          <div className="border-b border-border p-7 md:p-12 lg:col-span-6 lg:border-b-0 lg:border-r lg:p-14">
-            <p className="eyebrow text-primary">{eyebrow}</p>
-            <h1 className="mt-7 max-w-4xl break-words font-display text-4xl font-light leading-[1.02] sm:text-5xl md:text-7xl">{title}</h1>
+          <div className="border-b border-border p-6 sm:p-8 md:p-12 lg:col-span-6 lg:border-b-0 lg:border-r lg:p-14">
+            <div className="flex items-center gap-3">
+              <span className="text-sm font-bold text-primary lg:hidden">{number}/</span>
+              <p className="eyebrow min-w-0 text-primary">{eyebrow}</p>
+            </div>
+            <h1 className="mt-5 max-w-4xl break-words font-display text-[2rem] font-light leading-[1.08] sm:text-5xl sm:leading-[1.02] md:mt-7 md:text-7xl">{title}</h1>
           </div>
-          <div className="flex flex-col justify-end p-7 md:p-10 lg:col-span-4">
-            <span className="mb-8 h-0.5 w-12 bg-primary" />
-            <p className="max-w-md text-lg leading-8 text-muted-foreground">{text}</p>
+          <div className="flex flex-col justify-end p-6 sm:p-8 md:p-10 lg:col-span-4">
+            <span className="mb-5 h-0.5 w-12 bg-primary md:mb-8" />
+            <p className="max-w-md text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">{text}</p>
           </div>
         </div>
-        <div className="flex items-center justify-between border-t border-border px-7 py-4 text-[0.68rem] font-bold uppercase tracking-[0.17em] text-muted-foreground"><span>Unternehmerische Klarheit</span><span className="text-primary">Strategie · Technologie · Planung</span></div>
+        <div className="flex flex-col gap-1 border-t border-border px-6 py-4 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-7 sm:tracking-[0.17em]"><span>Unternehmerische Klarheit</span><span className="text-primary">Strategie · Technologie · Planung</span></div>
       </div>
     </section>
   );
