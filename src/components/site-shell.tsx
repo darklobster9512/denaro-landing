@@ -128,14 +128,14 @@ export function SiteFooter() {
         </div>
         <div className="text-sm leading-8">
           <p className="eyebrow text-primary">Navigation</p>
-          <div className="mt-3 flex flex-col items-start text-muted-foreground">
-            <Link to="/leistungen" className="hover:text-primary">Leistungen</Link>
-            <Link to="/ueber-uns" className="hover:text-primary">Über uns</Link>
-            <Link to="/team" className="hover:text-primary">Team</Link>
-            <Link to="/karriere" className="hover:text-primary">Karriere</Link>
-            <Link to="/kontakt" className="hover:text-primary">Kontakt</Link>
-            <Link to="/impressum" className="hover:text-primary">Impressum</Link>
-            <Link to="/datenschutz" className="hover:text-primary">Datenschutz</Link>
+          <div className="mt-3 grid grid-cols-2 items-start gap-x-6 text-muted-foreground sm:grid-cols-1">
+            <Link to="/leistungen" className="tap-target hover:text-primary">Leistungen</Link>
+            <Link to="/ueber-uns" className="tap-target hover:text-primary">Über uns</Link>
+            <Link to="/team" className="tap-target hover:text-primary">Team</Link>
+            <Link to="/karriere" className="tap-target hover:text-primary">Karriere</Link>
+            <Link to="/kontakt" className="tap-target hover:text-primary">Kontakt</Link>
+            <Link to="/impressum" className="tap-target hover:text-primary">Impressum</Link>
+            <Link to="/datenschutz" className="tap-target hover:text-primary">Datenschutz</Link>
           </div>
         </div>
       </div>
