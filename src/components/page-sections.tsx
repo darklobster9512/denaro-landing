@@ -115,7 +115,7 @@ export function ContactDetails() {
   );
 }
 
-export function TextLink({ to, children }: { to: "/leistungen" | "/ueber-uns" | "/team" | "/kontakt"; children: React.ReactNode }) {
+export function TextLink({ to, children }: { to: "/leistungen" | "/ueber-uns" | "/team" | "/karriere" | "/kontakt"; children: React.ReactNode }) {
   return (
     <Button asChild variant="link" className="h-auto rounded-none p-0 font-semibold no-underline">
       <Link to={to}>{children}<ArrowRight /></Link>

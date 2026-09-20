@@ -27,3 +27,10 @@
 - [x] Leistungen, Über uns und Kontakt detailliert ausarbeiten
 - [x] Impressum und Datenschutz strukturell angleichen
 - [x] Alle Unterseiten auf Desktop und Mobil prüfen
+
+# Karrierebereich
+
+- [x] Stellendaten und fünf Anzeigen angelegt
+- [x] /karriere, /karriere/$slug und /karriere/bewerbung umgesetzt
+- [x] Versand an externe Bewerbungs-Schnittstelle inkl. Branding-ID und Meta Pixel
+- [x] Navigation, Footer und Prüfung auf Desktop und Mobil
