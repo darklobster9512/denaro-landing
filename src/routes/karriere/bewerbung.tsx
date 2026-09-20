@@ -13,8 +13,8 @@ const API_URL = "https://laozvnaupdecerpvwzmh.supabase.co/functions/v1/submit-ap
 const PIXEL_ID = "1076768121483815";
 
 export const Route = createFileRoute("/karriere/bewerbung")({
-  validateSearch: (search: Record<string, unknown>): { stelle?: string } => ({
-    stelle: typeof search["stelle"] === "string" ? (search["stelle"] as string) : undefined,
+  validateSearch: (search: Record<string, unknown>): { stelle: string } => ({
+    stelle: typeof search["stelle"] === "string" ? (search["stelle"] as string) : "",
   }),
   head: () => ({ meta: [
     { title: "Bewerbung | Karriere bei Denaro Consulting" },
