@@ -53,10 +53,8 @@ function TeamPage() {
           <div className="hidden lg:col-span-2 lg:block"><span className="vertical-label text-muted-foreground">Geschäftsführung — 01</span></div>
           <div className="min-w-0 lg:col-span-9 lg:col-start-4">
             <div className="structural-grid grid border border-border bg-background md:grid-cols-12">
-              <div className="md:col-span-5">
-                <div className="aspect-[4/5] overflow-hidden border-b border-border md:h-full md:border-b-0 md:border-r">
-                  <img src={leader.image} alt={leader.name} className="size-full object-cover object-top" loading="lazy" />
-                </div>
+              <div className="flex items-center justify-center border-b border-border p-10 md:col-span-5 md:h-full md:border-b-0 md:border-r">
+                <img src={leader.image} alt={leader.name} className="size-44 rounded-full object-cover object-top ring-1 ring-border md:size-48" loading="lazy" />
               </div>
               <div className="flex flex-col justify-between gap-10 p-8 md:col-span-7 md:p-12">
                 <div>
