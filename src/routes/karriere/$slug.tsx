@@ -104,16 +104,16 @@ function StelleDetail() {
             <div className="min-w-0 space-y-12 lg:col-span-9 lg:col-start-4 md:space-y-16">
               {sections.map((section, sectionIndex) => (
                 <div key={section.title}>
-                  <div className="flex items-baseline gap-6 border-b border-border pb-5">
+                   <div className="flex items-baseline gap-4 border-b border-border pb-5 sm:gap-6">
                     <span className="text-sm font-bold text-primary">{String(sectionIndex + 1).padStart(2, "0")}</span>
-                    <h2 className="font-display text-2xl font-semibold md:text-3xl">{section.title}</h2>
+                    <h2 className="font-display text-xl font-semibold sm:text-2xl md:text-3xl">{section.title}</h2>
                   </div>
                   {section.text ? (
-                    <p className="mt-7 max-w-3xl text-lg leading-8 text-muted-foreground">{section.text}</p>
+                    <p className="mt-6 max-w-3xl leading-7 text-muted-foreground sm:text-lg sm:leading-8">{section.text}</p>
                   ) : (
-                    <ul className="mt-7 border-t border-border">
+                    <ul className="mt-6 border-t border-border">
                       {section.items?.map((item, itemIndex) => (
-                        <li key={item} className="grid grid-cols-[2.5rem_1fr] gap-2 border-b border-border py-4 text-base leading-7 text-muted-foreground">
+                        <li key={item} className="grid grid-cols-[2rem_1fr] gap-2 border-b border-border py-4 text-base leading-7 text-muted-foreground sm:grid-cols-[2.5rem_1fr]">
                           <span className="text-xs font-bold text-primary">{String(itemIndex + 1).padStart(2, "0")}</span>
                           <span className="min-w-0 break-words">{item}</span>
                         </li>
