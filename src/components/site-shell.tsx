@@ -109,35 +109,98 @@ export function ContactBand() {
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border bg-background text-foreground">
-      <div className="site-container grid gap-10 py-12 md:grid-cols-2 md:gap-12 md:py-16 lg:grid-cols-[1.3fr_0.8fr_0.8fr] lg:py-20">
-        <div>
-          <img src={logoAsset.url} alt="Denaro Consulting" className="h-8 w-auto" width="1528" height="355" />
-          <p className="mt-4 max-w-sm text-sm leading-7 text-muted-foreground">
-            Unternehmensberatung, Informationstechnologie und Architektur mit klarer Perspektive und verlässlicher Umsetzung.
-          </p>
-        </div>
-        <div className="text-sm leading-7">
-          <p className="eyebrow text-primary">Kontakt</p>
-          <p className="mt-3 text-muted-foreground">Mettlacher Straße 10<br />40468 Düsseldorf</p>
-          <a className="tap-target mt-2 hover:text-primary" href="tel:+4921187971210">0211 87971210</a>
-          <a className="tap-target break-all hover:text-primary" href="mailto:kontakt@denaro-consult.com">kontakt@denaro-consult.com</a>
-        </div>
-        <div className="text-sm leading-8">
-          <p className="eyebrow text-primary">Navigation</p>
-          <div className="mt-3 grid grid-cols-2 items-start gap-x-6 text-muted-foreground sm:grid-cols-1">
-            <Link to="/leistungen" className="tap-target hover:text-primary">Leistungen</Link>
-            <Link to="/ueber-uns" className="tap-target hover:text-primary">Über uns</Link>
-            <Link to="/team" className="tap-target hover:text-primary">Team</Link>
-            <Link to="/karriere" className="tap-target hover:text-primary">Karriere</Link>
-            <Link to="/kontakt" className="tap-target hover:text-primary">Kontakt</Link>
-            <Link to="/impressum" className="tap-target hover:text-primary">Impressum</Link>
-            <Link to="/datenschutz" className="tap-target hover:text-primary">Datenschutz</Link>
+    <footer className="bg-background text-foreground">
+      <div className="site-container pb-8 pt-2 md:pb-12">
+        <div className="border border-border bg-card shadow-sm">
+          <div className="grid grid-cols-1 md:grid-cols-12">
+            {/* Identität */}
+            <div className="border-b border-border p-6 sm:p-8 md:col-span-4 md:border-r md:p-10">
+              <Link to="/" className="inline-block" aria-label="Denaro Consulting Startseite">
+                <img src={logoAsset.url} alt="Denaro Consulting" className="h-9 w-auto" width="1528" height="355" />
+              </Link>
+              <p className="mt-5 max-w-xs text-sm leading-7 text-muted-foreground">
+                Unternehmensberatung, Informationstechnologie und Architektur mit klarer Perspektive und verlässlicher Umsetzung.
+              </p>
+              <div className="mt-8 space-y-1 font-mono text-[11px] uppercase leading-5 tracking-tight text-muted-foreground/80">
+                <p>HRB 107712 · Amtsgericht Düsseldorf</p>
+                <p>UStId DE163919849</p>
+              </div>
+              <p className="mt-5 border-t border-border/70 pt-4 text-xs text-muted-foreground">
+                <span className="text-foreground font-medium">Geschäftsführer:</span> Alexander Valentino Denaro
+              </p>
+            </div>
+
+            {/* Leistungen */}
+            <div className="border-b border-border p-6 sm:p-8 md:col-span-3 md:border-r md:p-10">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Leistungen</p>
+              <ul className="mt-6 space-y-1 text-sm">
+                <li>
+                  <Link to="/leistungen" className="tap-target text-muted-foreground transition-colors hover:text-primary">
+                    Unternehmensberatung
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/leistungen" className="tap-target text-muted-foreground transition-colors hover:text-primary">
+                    IT-Beratung
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/leistungen" className="tap-target text-muted-foreground transition-colors hover:text-primary">
+                    Architektur &amp; Hochbau
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Unternehmen */}
+            <div className="border-b border-border p-6 sm:p-8 md:col-span-2 md:border-r md:p-10">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Unternehmen</p>
+              <ul className="mt-6 space-y-1 text-sm">
+                <li><Link to="/ueber-uns" className="tap-target text-muted-foreground transition-colors hover:text-primary">Über uns</Link></li>
+                <li><Link to="/team" className="tap-target text-muted-foreground transition-colors hover:text-primary">Team</Link></li>
+                <li><Link to="/karriere" className="tap-target text-muted-foreground transition-colors hover:text-primary">Karriere</Link></li>
+                <li><Link to="/kontakt" className="tap-target text-muted-foreground transition-colors hover:text-primary">Kontakt</Link></li>
+              </ul>
+            </div>
+
+            {/* Kontakt */}
+            <div className="p-6 sm:p-8 md:col-span-3 md:p-10">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Kontakt</p>
+              <address className="mt-6 space-y-4 not-italic text-sm">
+                <p className="leading-6 text-muted-foreground">
+                  Mettlacher Straße 10<br />
+                  40468 Düsseldorf
+                </p>
+                <div className="space-y-2">
+                  <a href="tel:+4921187971210" className="tap-target block font-medium text-foreground transition-colors hover:text-primary">
+                    0211 87971210
+                  </a>
+                  <a
+                    href="mailto:kontakt@denaro-consult.com"
+                    className="tap-target block break-all font-medium text-primary underline decoration-primary/30 underline-offset-4 transition-colors hover:decoration-primary"
+                  >
+                    kontakt@denaro-consult.com
+                  </a>
+                </div>
+              </address>
+            </div>
+          </div>
+
+          {/* Rechtszeile */}
+          <div className="border-t border-border px-6 py-5 sm:px-8 md:px-10">
+            <div className="flex flex-col gap-4 text-[11px] tracking-wide text-muted-foreground md:flex-row md:items-center md:justify-between">
+              <div className="flex flex-wrap items-center gap-x-7 gap-y-2">
+                <span className="font-medium text-foreground/70">© 2026 Denaro Consulting GmbH</span>
+                <Link to="/impressum" className="tap-target uppercase transition-colors hover:text-primary">Impressum</Link>
+                <Link to="/datenschutz" className="tap-target uppercase transition-colors hover:text-primary">Datenschutz</Link>
+              </div>
+              <div className="group inline-flex items-center">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-foreground transition-colors group-hover:text-primary">Düsseldorf</span>
+                <ArrowRight className="ml-2 size-3.5 text-primary transition-transform group-hover:translate-x-1" />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-       <div className="border-t border-border bg-secondary/50">
-         <div className="site-container flex flex-col gap-3 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between"><span>© 2026 Denaro Consulting GmbH</span><span className="flex items-center gap-2 text-primary">Düsseldorf <ArrowRight className="size-3" /></span></div>
       </div>
     </footer>
   );
