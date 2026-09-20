@@ -42,26 +42,26 @@ const members = [
 function TeamPage() {
   return <>
     <PageIntro eyebrow="Unser Team" title="Die Menschen hinter Denaro." text="Persönlich, erfahren und mit klarer Verantwortung: Lernen Sie die Menschen kennen, die unsere Mandate von der ersten Analyse bis zur Umsetzung begleiten." number="04" />
-    <section className="py-24 md:py-32">
+    <section className="py-14 md:py-32">
       <div className="site-container">
         {/* Geschäftsführung */}
-        <div className="mb-12 grid gap-8 border-b border-border pb-10 lg:grid-cols-12">
+        <div className="mb-9 grid gap-5 border-b border-border pb-8 md:mb-12 md:pb-10 lg:grid-cols-12 lg:gap-8">
           <p className="eyebrow text-primary lg:col-span-3">Geschäftsführung</p>
-          <h2 className="font-display text-3xl font-light leading-tight md:text-4xl lg:col-span-6 lg:col-start-7">Verantwortung mit <span className="font-semibold text-primary">klarer Haltung.</span></h2>
+          <h2 className="font-display text-2xl font-light leading-tight sm:text-3xl md:text-4xl lg:col-span-6 lg:col-start-7">Verantwortung mit <span className="font-semibold text-primary">klarer Haltung.</span></h2>
         </div>
         <div className="grid lg:grid-cols-12">
           <div className="hidden lg:col-span-2 lg:block"><span className="vertical-label text-muted-foreground">Geschäftsführung — 01</span></div>
           <div className="min-w-0 lg:col-span-9 lg:col-start-4">
             <div className="structural-grid grid border border-border bg-background md:grid-cols-12">
-              <div className="flex items-center justify-center border-b border-border p-10 md:col-span-5 md:h-full md:border-b-0 md:border-r">
-                <img src={leader.image} alt={leader.name} className="size-44 rounded-full object-cover object-top ring-1 ring-border md:size-48" loading="lazy" />
+              <div className="flex items-center justify-center border-b border-border p-8 md:col-span-5 md:h-full md:border-b-0 md:border-r md:p-10">
+                <img src={leader.image} alt={leader.name} className="size-36 rounded-full object-cover object-top ring-1 ring-border sm:size-44 md:size-48" loading="lazy" />
               </div>
-              <div className="flex flex-col justify-between gap-10 p-8 md:col-span-7 md:p-12">
+              <div className="flex flex-col justify-between gap-7 p-6 sm:p-8 md:col-span-7 md:gap-10 md:p-12">
                 <div>
                   <span className="text-sm font-bold text-primary">01/</span>
-                  <p className="eyebrow mt-8 text-primary">{leader.role}</p>
-                  <h3 className="mt-4 font-display text-3xl font-light leading-tight md:text-5xl">{leader.name}</h3>
-                  <p className="mt-6 max-w-lg leading-7 text-muted-foreground">
+                  <p className="eyebrow mt-6 text-primary md:mt-8">{leader.role}</p>
+                  <h3 className="mt-4 font-display text-2xl font-light leading-tight sm:text-3xl md:text-5xl">{leader.name}</h3>
+                  <p className="mt-5 max-w-lg leading-7 text-muted-foreground md:mt-6">
                     Als Geschäftsführer verantwortet Alexander Valentino Denaro die strategische Ausrichtung der Denaro Consulting GmbH und begleitet Mandate persönlich von der ersten Analyse bis zur Entscheidung.
                   </p>
                 </div>
@@ -75,10 +75,10 @@ function TeamPage() {
         </div>
 
         {/* Team */}
-        <div className="mt-20 md:mt-28">
-          <div className="mb-12 grid gap-8 border-b border-border pb-10 lg:grid-cols-12">
+        <div className="mt-14 md:mt-28">
+          <div className="mb-9 grid gap-5 border-b border-border pb-8 md:mb-12 md:pb-10 lg:grid-cols-12 lg:gap-8">
             <p className="eyebrow text-primary lg:col-span-3">Team</p>
-            <h2 className="font-display text-3xl font-light leading-tight md:text-4xl lg:col-span-6 lg:col-start-7">Persönlich erreichbar. <span className="font-semibold text-primary">Klar im Austausch.</span></h2>
+            <h2 className="font-display text-2xl font-light leading-tight sm:text-3xl md:text-4xl lg:col-span-6 lg:col-start-7">Persönlich erreichbar. <span className="font-semibold text-primary">Klar im Austausch.</span></h2>
           </div>
           <div className="grid lg:grid-cols-12">
             <div className="hidden lg:col-span-2 lg:block"><span className="vertical-label text-muted-foreground">Team — 02</span></div>
@@ -100,10 +100,10 @@ function TeamPage() {
         </div>
 
         {/* Kontaktabschluss */}
-        <div className="structural-grid mt-20 grid border border-border bg-brand-blue-soft md:mt-28 md:grid-cols-12">
-          <div className="border-b border-border p-8 md:col-span-2 md:border-b-0 md:border-r md:p-10"><span className="text-sm font-bold text-primary">03/</span></div>
-          <div className="border-b border-border p-8 md:col-span-7 md:border-b-0 md:border-r md:p-12"><p className="eyebrow text-primary">Lernen Sie uns kennen</p><h2 className="mt-6 font-display text-3xl font-light md:text-5xl">Sprechen Sie mit <span className="font-semibold text-primary">unserem Team.</span></h2><p className="mt-5 max-w-2xl leading-7 text-muted-foreground">Vereinbaren Sie ein erstes Gespräch — wir melden uns persönlich bei Ihnen zurück.</p></div>
-          <div className="flex items-center p-8 md:col-span-3"><Button asChild size="lg" className="h-14 w-full rounded-none px-8 shadow-none"><Link to="/kontakt">Kontakt aufnehmen <ArrowUpRight /></Link></Button></div>
+        <div className="structural-grid mt-14 grid border border-border bg-brand-blue-soft md:mt-28 md:grid-cols-12">
+          <div className="hidden border-b border-border p-8 md:col-span-2 md:block md:border-b-0 md:border-r md:p-10"><span className="text-sm font-bold text-primary">03/</span></div>
+          <div className="border-b border-border p-6 sm:p-8 md:col-span-7 md:border-b-0 md:border-r md:p-12"><p className="eyebrow text-primary">Lernen Sie uns kennen</p><h2 className="mt-5 font-display text-2xl font-light sm:text-3xl md:mt-6 md:text-5xl">Sprechen Sie mit <span className="font-semibold text-primary">unserem Team.</span></h2><p className="mt-5 max-w-2xl leading-7 text-muted-foreground">Vereinbaren Sie ein erstes Gespräch — wir melden uns persönlich bei Ihnen zurück.</p></div>
+          <div className="flex items-center p-6 sm:p-8 md:col-span-3"><Button asChild size="lg" className="h-14 w-full rounded-none px-8 shadow-none"><Link to="/kontakt">Kontakt aufnehmen <ArrowUpRight /></Link></Button></div>
         </div>
       </div>
     </section>

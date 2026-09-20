@@ -169,11 +169,27 @@
 }
 
 @utility eyebrow {
-  font-size: 0.72rem;
-  line-height: 1rem;
+  font-size: 0.75rem;
+  line-height: 1.1rem;
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
+
+  @media (min-width: 768px) {
+    font-size: 0.72rem;
+    line-height: 1rem;
+    letter-spacing: 0.18em;
+  }
+}
+
+@utility tap-target {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+
+  @media (min-width: 768px) {
+    min-height: 0;
+  }
 }
 
 @utility editorial {
