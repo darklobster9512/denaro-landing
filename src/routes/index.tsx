@@ -25,19 +25,19 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return <>
-    <section className="structural-grid border-b border-border bg-secondary py-8 md:py-12">
+    <section className="structural-grid border-b border-border bg-secondary py-6 md:py-12">
       <div className="site-container grid border border-border bg-background md:structural-shadow lg:grid-cols-12">
-        <div className="reveal flex min-h-[38rem] flex-col justify-center border-b border-border p-7 md:p-14 lg:col-span-7 lg:border-b-0 lg:border-r lg:p-16">
-          <p className="eyebrow flex items-center gap-4 text-primary"><span className="line-grow h-0.5 w-10 bg-primary" />Denaro Consulting · Düsseldorf</p>
-          <h1 className="mt-8 max-w-3xl font-display text-5xl font-light leading-[1.02] md:text-7xl lg:text-[5rem]">Klarheit für <span className="font-semibold text-primary">komplexe</span> Vorhaben.</h1>
-          <p className="mt-8 max-w-xl text-lg leading-8 text-muted-foreground">Unternehmerische Weitsicht, technologische Kompetenz und planerische Präzision — konsequent zusammengeführt.</p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+        <div className="reveal flex flex-col justify-center border-b border-border p-6 sm:p-8 md:min-h-[38rem] md:p-14 lg:col-span-7 lg:border-b-0 lg:border-r lg:p-16">
+          <p className="eyebrow flex items-center gap-3 text-primary sm:gap-4"><span className="line-grow h-0.5 w-8 shrink-0 bg-primary sm:w-10" />Denaro Consulting · Düsseldorf</p>
+          <h1 className="mt-6 max-w-3xl font-display text-[2.4rem] font-light leading-[1.05] sm:text-5xl sm:leading-[1.02] md:mt-8 md:text-7xl lg:text-[5rem]">Klarheit für <span className="font-semibold text-primary">komplexe</span> Vorhaben.</h1>
+          <p className="mt-6 max-w-xl leading-7 text-muted-foreground sm:text-lg sm:leading-8 md:mt-8">Unternehmerische Weitsicht, technologische Kompetenz und planerische Präzision — konsequent zusammengeführt.</p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row md:mt-10">
             <Button asChild size="lg" className="h-14 rounded-none px-8"><Link to="/kontakt">Erstgespräch vereinbaren <ArrowUpRight /></Link></Button>
             <Button asChild size="lg" variant="outline" className="h-14 rounded-none border-foreground bg-background px-8 text-foreground shadow-none hover:border-primary hover:bg-secondary hover:text-primary"><Link to="/leistungen">Unsere Expertise</Link></Button>
           </div>
         </div>
-        <div className="reveal-delay flex min-h-[34rem] flex-col lg:col-span-5">
-          <div className="group relative min-h-[27rem] flex-1 overflow-hidden">
+        <div className="reveal-delay flex flex-col md:min-h-[34rem] lg:col-span-5">
+          <div className="group relative min-h-64 flex-1 overflow-hidden md:min-h-[27rem]">
             <img src={heroArchitectureImage.url} alt="Moderne Unternehmensarchitektur mit klarer Glasfassade" width={1800} height={1198} className="image-lift absolute inset-0 size-full object-cover" fetchPriority="high" />
             <div className="absolute inset-x-0 bottom-0 border-t border-primary/30 bg-background/90 p-5 backdrop-blur-sm">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Strategie · Technologie · Planung</p>
@@ -49,17 +49,17 @@ function Index() {
           </div>
         </div>
         <div className="col-span-full grid border-t border-border sm:grid-cols-3">
-          {[["01","Unternehmensberatung","#unternehmensberatung"],["02","IT-Beratung","#it-beratung"],["03","Architektur & Hochbau","#architektur"]].map(([number, label, href]) => <a key={number} href={href} className="group flex items-center justify-between border-b border-border p-5 last:border-b-0 hover:bg-secondary sm:border-b-0 sm:border-r sm:last:border-r-0"><span className="flex items-center gap-4"><span className="text-xs font-bold text-primary">{number}</span><span className="text-sm font-semibold">{label}</span></span><ArrowDown className="size-4 text-muted-foreground transition-transform group-hover:translate-y-1 group-hover:text-primary" /></a>)}
+          {[["01","Unternehmensberatung","#unternehmensberatung"],["02","IT-Beratung","#it-beratung"],["03","Architektur & Hochbau","#architektur"]].map(([number, label, href]) => <a key={number} href={href} className="group flex min-h-14 items-center justify-between border-b border-border p-5 last:border-b-0 hover:bg-secondary sm:border-b-0 sm:border-r sm:last:border-r-0"><span className="flex items-center gap-4"><span className="text-xs font-bold text-primary">{number}</span><span className="text-sm font-semibold">{label}</span></span><ArrowDown className="size-4 text-muted-foreground transition-transform group-hover:translate-y-1 group-hover:text-primary" /></a>)}
         </div>
       </div>
     </section>
 
-    <section className="border-b border-border py-24 md:py-32">
+    <section className="border-b border-border py-14 md:py-32">
       <div className="site-container">
-        <div className="grid gap-12 lg:grid-cols-12">
+        <div className="grid gap-7 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-2"><p className="eyebrow text-primary">01—03 / Kompetenzfelder</p></div>
-          <div className="lg:col-span-7"><h2 className="font-display text-4xl font-light leading-tight md:text-6xl">Drei Perspektiven für Entscheidungen, die <span className="font-semibold text-primary">weitertragen.</span></h2></div>
-          <div className="lg:col-span-3 lg:pt-3"><p className="text-lg leading-8 text-muted-foreground">Komplexe Aufgaben brauchen mehr als eine Disziplin. Wir betrachten wirtschaftliche, digitale und bauliche Zusammenhänge gemeinsam.</p></div>
+          <div className="lg:col-span-7"><h2 className="font-display text-3xl font-light leading-tight sm:text-4xl md:text-6xl">Drei Perspektiven für Entscheidungen, die <span className="font-semibold text-primary">weitertragen.</span></h2></div>
+          <div className="lg:col-span-3 lg:pt-3"><p className="leading-7 text-muted-foreground sm:text-lg sm:leading-8">Komplexe Aufgaben brauchen mehr als eine Disziplin. Wir betrachten wirtschaftliche, digitale und bauliche Zusammenhänge gemeinsam.</p></div>
         </div>
       </div>
     </section>
@@ -67,16 +67,16 @@ function Index() {
     <section id="unternehmensberatung" className="scroll-mt-24 border-b border-border">
       <div className="site-container grid lg:grid-cols-12">
         <div className="relative border-x border-border lg:col-span-7">
-          <div className="group h-full min-h-[30rem] overflow-hidden"><img src={heroImage.url} alt="Strategische Unternehmensberatung im gemeinsamen Gespräch" width={1600} height={1072} loading="lazy" className="image-lift size-full object-cover" /></div>
+          <div className="group h-full min-h-72 overflow-hidden md:min-h-[30rem]"><img src={heroImage.url} alt="Strategische Unternehmensberatung im gemeinsamen Gespräch" width={1600} height={1072} loading="lazy" className="image-lift size-full object-cover" /></div>
           <span className="absolute left-0 top-0 bg-primary px-5 py-4 text-sm font-bold text-primary-foreground">01</span>
         </div>
-        <article className="flex flex-col justify-center border-x border-t border-border p-8 lg:col-span-5 lg:border-l-0 lg:border-t-0 lg:p-14">
-          <LineChart className="size-8 text-primary" strokeWidth={1.5} />
-          <p className="eyebrow mt-10 text-primary">Unternehmensberatung</p>
-          <h2 className="mt-5 text-4xl font-semibold leading-tight">Entscheidungen mit wirtschaftlicher Substanz.</h2>
-          <p className="mt-6 leading-7 text-muted-foreground">Wir ordnen Strukturen, schärfen Optionen und begleiten Unternehmen von der strategischen Fragestellung bis zur belastbaren Umsetzung.</p>
-          <ul className="mt-8 border-t border-border">
-            {["Strategie und Organisation","Prozess- und Projektbegleitung","Wirtschaftliche Entscheidungsgrundlagen"].map(item => <li key={item} className="flex items-center gap-3 border-b border-border py-3 text-sm font-semibold"><Check className="size-4 text-primary" />{item}</li>)}
+        <article className="flex flex-col justify-center border-x border-t border-border p-6 sm:p-8 lg:col-span-5 lg:border-l-0 lg:border-t-0 lg:p-14">
+          <LineChart className="size-7 text-primary sm:size-8" strokeWidth={1.5} />
+          <p className="eyebrow mt-7 text-primary md:mt-10">Unternehmensberatung</p>
+          <h2 className="mt-4 text-3xl font-semibold leading-tight sm:mt-5 sm:text-4xl">Entscheidungen mit wirtschaftlicher Substanz.</h2>
+          <p className="mt-5 leading-7 text-muted-foreground md:mt-6">Wir ordnen Strukturen, schärfen Optionen und begleiten Unternehmen von der strategischen Fragestellung bis zur belastbaren Umsetzung.</p>
+          <ul className="mt-7 border-t border-border md:mt-8">
+            {["Strategie und Organisation","Prozess- und Projektbegleitung","Wirtschaftliche Entscheidungsgrundlagen"].map(item => <li key={item} className="flex items-center gap-3 border-b border-border py-3 text-sm font-semibold"><Check className="size-4 shrink-0 text-primary" />{item}</li>)}
           </ul>
         </article>
       </div>
@@ -84,18 +84,18 @@ function Index() {
 
     <section id="it-beratung" className="scroll-mt-24 border-b border-border bg-secondary">
       <div className="site-container grid lg:grid-cols-12">
-        <article className="flex flex-col justify-center border-x border-border p-8 lg:col-span-5 lg:p-14">
-          <Cpu className="size-8 text-primary" strokeWidth={1.5} />
-          <p className="eyebrow mt-10 text-primary">02 / IT-Beratung</p>
-          <h2 className="mt-5 text-4xl font-semibold leading-tight">Technologie, die fachlich funktioniert.</h2>
-          <p className="mt-6 leading-7 text-muted-foreground">Wir übersetzen Anforderungen in tragfähige IT-Lösungen und schaffen Orientierung bei Systemen, Prozessen und Digitalisierung.</p>
-          <div className="mt-8 grid grid-cols-2 border-l border-t border-border bg-background">
+        <article className="flex flex-col justify-center border-x border-border p-6 sm:p-8 lg:col-span-5 lg:p-14">
+          <Cpu className="size-7 text-primary sm:size-8" strokeWidth={1.5} />
+          <p className="eyebrow mt-7 text-primary md:mt-10">02 / IT-Beratung</p>
+          <h2 className="mt-4 text-3xl font-semibold leading-tight sm:mt-5 sm:text-4xl">Technologie, die fachlich funktioniert.</h2>
+          <p className="mt-5 leading-7 text-muted-foreground md:mt-6">Wir übersetzen Anforderungen in tragfähige IT-Lösungen und schaffen Orientierung bei Systemen, Prozessen und Digitalisierung.</p>
+          <div className="mt-7 grid grid-cols-2 border-l border-t border-border bg-background md:mt-8">
             {["Digitalisierung","Systemanalyse","Prozesse","Projektbegleitung"].map((item, index) => <div key={item} className="border-b border-r border-border p-4"><span className="text-xs font-bold text-primary">0{index + 1}</span><p className="mt-2 text-sm font-semibold">{item}</p></div>)}
           </div>
         </article>
-        <div className="group relative min-h-[31rem] overflow-hidden border-x border-t border-border lg:col-span-7 lg:border-l-0 lg:border-t-0">
+        <div className="group relative min-h-72 overflow-hidden border-x border-t border-border md:min-h-[31rem] lg:col-span-7 lg:border-l-0 lg:border-t-0">
           <img src={itImage.url} alt="IT-Beratung und digitale Systemplanung" width={1408} height={1056} loading="lazy" className="image-lift absolute inset-0 size-full object-cover" />
-          <div className="absolute bottom-0 right-0 max-w-xs border-l border-t border-border bg-background p-6"><p className="text-sm font-semibold">Von der fachlichen Anforderung zur klaren technischen Richtung.</p></div>
+          <div className="absolute bottom-0 right-0 hidden max-w-xs border-l border-t border-border bg-background p-6 sm:block"><p className="text-sm font-semibold">Von der fachlichen Anforderung zur klaren technischen Richtung.</p></div>
         </div>
       </div>
     </section>
