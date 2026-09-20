@@ -41,7 +41,7 @@ export function PageIntro({ eyebrow, title, text, number = "01" }: { eyebrow: st
         <div className="grid min-w-0 overflow-hidden lg:grid-cols-12">
           <div className="hidden border-b border-border p-7 lg:col-span-2 lg:block lg:border-b-0 lg:border-r lg:p-10">
             <span className="text-sm font-bold text-primary">{number}/</span>
-            <p className="vertical-label mt-12 hidden text-[0.7rem] font-bold uppercase tracking-[0.2em] text-muted-foreground lg:block">Denaro Consulting · Düsseldorf</p>
+            <p className="vertical-label mt-12 hidden text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground lg:block">Denaro Consulting · Düsseldorf</p>
           </div>
           <div className="border-b border-border p-6 sm:p-8 md:p-12 lg:col-span-6 lg:border-b-0 lg:border-r lg:p-14">
             <div className="flex items-center gap-3">
@@ -55,7 +55,7 @@ export function PageIntro({ eyebrow, title, text, number = "01" }: { eyebrow: st
             <p className="max-w-md text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">{text}</p>
           </div>
         </div>
-        <div className="flex flex-col gap-1 border-t border-border px-6 py-4 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-7 sm:tracking-[0.17em]"><span>Unternehmerische Klarheit</span><span className="text-primary">Strategie · Technologie · Planung</span></div>
+        <div className="flex flex-col gap-1 border-t border-border px-6 py-4 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-7 sm:tracking-[0.17em]"><span>Unternehmerische Klarheit</span><span className="text-primary">Strategie · Technologie · Planung</span></div>
       </div>
     </section>
   );

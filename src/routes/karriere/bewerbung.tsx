@@ -157,7 +157,7 @@ function BewerbungPage() {
           <div className="grid min-w-0 overflow-hidden lg:grid-cols-12">
             <div className="hidden border-b border-border p-7 lg:col-span-2 lg:block lg:border-b-0 lg:border-r lg:p-10">
               <span className="text-sm font-bold text-primary">05/</span>
-              <p className="vertical-label mt-12 hidden text-[0.7rem] font-bold uppercase tracking-[0.2em] text-muted-foreground lg:block">Bewerbung · Düsseldorf</p>
+              <p className="vertical-label mt-12 hidden text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground lg:block">Bewerbung · Düsseldorf</p>
             </div>
             <div className="border-b border-border p-6 sm:p-8 md:p-12 lg:col-span-6 lg:border-b-0 lg:border-r lg:p-14">
               <div className="flex items-center gap-3">
@@ -171,7 +171,7 @@ function BewerbungPage() {
               <p className="max-w-md leading-7 text-muted-foreground sm:text-lg sm:leading-8">Zwei kurze Schritte – Kontaktdaten und Rahmenbedingungen. Wir melden uns persönlich bei Ihnen zurück.</p>
             </div>
           </div>
-          <div className="flex items-center justify-between gap-4 border-t border-border px-6 py-3 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-muted-foreground sm:px-7 sm:py-4 sm:tracking-[0.17em]">
+          <div className="flex items-center justify-between gap-4 border-t border-border px-6 py-3 text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground sm:px-7 sm:py-4 sm:tracking-[0.17em]">
             <Link to="/karriere" className="inline-flex min-h-11 items-center hover:text-primary sm:min-h-0">← Alle Stellen</Link>
             <span className="text-right text-primary">Denaro Consulting GmbH</span>
           </div>

@@ -69,7 +69,7 @@ function StelleDetail() {
           <div className="grid min-w-0 overflow-hidden lg:grid-cols-12">
             <div className="hidden border-b border-border p-7 lg:col-span-2 lg:block lg:border-b-0 lg:border-r lg:p-10">
               <span className="text-sm font-bold text-primary">{String(index + 1).padStart(2, "0")}/</span>
-              <p className="vertical-label mt-12 hidden text-[0.7rem] font-bold uppercase tracking-[0.2em] text-muted-foreground lg:block">Karriere · Denaro Consulting</p>
+              <p className="vertical-label mt-12 hidden text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground lg:block">Karriere · Denaro Consulting</p>
             </div>
             <div className="border-b border-border p-6 sm:p-8 md:p-12 lg:col-span-6 lg:border-b-0 lg:border-r lg:p-14">
               <div className="flex items-center gap-3">

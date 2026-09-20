@@ -54,7 +54,7 @@ function KarrierePage() {
                     {[stelle.standort, stelle.modell, stelle.arbeitszeit, stelle.stundenlohn && `${stelle.stundenlohn} / Std.`]
                       .filter(Boolean)
                       .map((meta) => (
-                        <span key={meta as string} className="border border-border px-3 py-1.5 text-[0.7rem] font-bold uppercase tracking-[0.1em] text-muted-foreground sm:text-[0.65rem] sm:tracking-[0.15em]">
+                        <span key={meta as string} className="border border-border px-3 py-1.5 text-xs font-bold uppercase tracking-[0.1em] text-muted-foreground sm:text-[0.65rem] sm:tracking-[0.15em]">
                           {meta}
                         </span>
                       ))}
