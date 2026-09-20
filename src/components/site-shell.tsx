@@ -29,7 +29,7 @@ export function Brand() {
       </span>
       <span className="leading-none">
         <span className="block font-display text-lg font-semibold text-foreground">DENARO</span>
-        <span className="mt-1.5 block text-[0.61rem] font-semibold tracking-[0.2em] text-muted-foreground">CONSULTING</span>
+        <span className="mt-1.5 block text-[0.7rem] font-semibold tracking-[0.16em] text-muted-foreground md:text-[0.61rem] md:tracking-[0.2em]">CONSULTING</span>
       </span>
     </Link>
   );
@@ -38,7 +38,7 @@ export function Brand() {
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur-md">
-      <div className="site-container flex h-24 items-center justify-between">
+      <div className="site-container flex h-20 items-center justify-between gap-4 md:h-24">
         <Brand />
         <nav className="hidden items-center gap-9 lg:flex" aria-label="Hauptnavigation">
           {navItems.map((item) => (
@@ -58,28 +58,33 @@ export function SiteHeader() {
         </nav>
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="size-11 rounded-none lg:hidden" aria-label="Menü öffnen">
+            <Button variant="ghost" size="icon" className="size-12 shrink-0 rounded-none lg:hidden" aria-label="Menü öffnen">
               <Menu className="size-5" />
             </Button>
           </SheetTrigger>
-            <SheetContent className="w-[90vw] rounded-none border-l-border bg-background p-8">
+            <SheetContent className="flex w-[92vw] max-w-sm flex-col overflow-y-auto rounded-none border-l-border bg-background p-6 sm:p-8">
             <SheetHeader className="text-left">
               <SheetTitle><Brand /></SheetTitle>
               <SheetDescription className="pt-3">Beratung, Technologie und Architektur aus Düsseldorf.</SheetDescription>
             </SheetHeader>
-            <nav className="mt-12 flex flex-col gap-2" aria-label="Mobile Navigation">
+            <nav className="mt-8 flex flex-col" aria-label="Mobile Navigation">
               {navItems.map((item) => (
                 <SheetClose asChild key={item.to}>
-                  <Link to={item.to} className="border-b border-border py-4 font-display text-2xl font-bold">
+                  <Link to={item.to} className="flex min-h-14 items-center border-b border-border font-display text-xl font-bold active:text-primary">
                     {item.label}
                   </Link>
                 </SheetClose>
               ))}
             </nav>
-            <div className="mt-10 space-y-3 text-sm">
-              <a className="flex items-center gap-3 font-semibold text-primary" href="tel:+4921187971210"><Phone className="size-4" />0211 87971210</a>
-              <a className="flex items-center gap-3 font-semibold text-primary" href="mailto:kontakt@denaro-consult.com"><Mail className="size-4" />kontakt@denaro-consult.com</a>
+            <div className="mt-8 flex flex-col text-sm">
+              <a className="flex min-h-12 items-center gap-3 font-semibold text-primary" href="tel:+4921187971210"><Phone className="size-4 shrink-0" />0211 87971210</a>
+              <a className="flex min-h-12 items-center gap-3 break-all font-semibold text-primary" href="mailto:kontakt@denaro-consult.com"><Mail className="size-4 shrink-0" />kontakt@denaro-consult.com</a>
             </div>
+            <SheetClose asChild>
+              <Button asChild size="lg" className="mt-6 h-14 w-full rounded-none">
+                <Link to="/kontakt">Kontakt aufnehmen <ArrowUpRight /></Link>
+              </Button>
+            </SheetClose>
           </SheetContent>
         </Sheet>
       </div>
