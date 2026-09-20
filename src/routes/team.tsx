@@ -53,10 +53,8 @@ function TeamPage() {
           <div className="hidden lg:col-span-2 lg:block"><span className="vertical-label text-muted-foreground">Geschäftsführung — 01</span></div>
           <div className="min-w-0 lg:col-span-9 lg:col-start-4">
             <div className="structural-grid grid border border-border bg-background md:grid-cols-12">
-              <div className="md:col-span-5">
-                <div className="aspect-[4/5] overflow-hidden border-b border-border md:h-full md:border-b-0 md:border-r">
-                  <img src={leader.image} alt={leader.name} className="size-full object-cover object-top" loading="lazy" />
-                </div>
+              <div className="flex items-center justify-center border-b border-border p-10 md:col-span-5 md:h-full md:border-b-0 md:border-r">
+                <img src={leader.image} alt={leader.name} className="size-44 rounded-full object-cover object-top ring-1 ring-border md:size-48" loading="lazy" />
               </div>
               <div className="flex flex-col justify-between gap-10 p-8 md:col-span-7 md:p-12">
                 <div>
@@ -87,10 +85,10 @@ function TeamPage() {
             <div className="grid min-w-0 border border-border bg-background sm:grid-cols-2 lg:col-span-9 lg:col-start-4 lg:grid-cols-3">
               {members.map((member, index) => (
                 <article key={member.name} className="group border-b border-border last:border-b-0 sm:border-r sm:[&:nth-child(2n)]:border-r-0 sm:[&:nth-last-child(2)]:border-b-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0 lg:[&:nth-last-child(3)]:border-b-0">
-                  <div className="aspect-[4/5] overflow-hidden">
-                    <img src={member.image} alt={member.name} className="size-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+                  <div className="flex justify-center p-6">
+                    <img src={member.image} alt={member.name} className="size-28 rounded-full object-cover object-top ring-1 ring-border transition-all duration-300 group-hover:ring-2 group-hover:ring-primary" loading="lazy" />
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 pt-0 text-center">
                     <span className="text-xs font-bold text-primary">{String(index + 2).padStart(2, "0")}/</span>
                     <h3 className="mt-3 font-display text-xl font-semibold leading-snug">{member.name}</h3>
                     <p className="mt-1.5 text-sm text-muted-foreground">{member.role}</p>
