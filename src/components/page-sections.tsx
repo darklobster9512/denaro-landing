@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Building2, Cpu, LineChart, Mail, MapPin, Phone } from "lucide-react";
 
-import consultingImage from "@/assets/denaro-boardroom-stock.jpg.asset.json";
-import itImage from "@/assets/denaro-it-stock.jpg.asset.json";
-import architectureImage from "@/assets/denaro-architecture-stock.jpg.asset.json";
+const consultingImage = { url: "/images/denaro-boardroom-stock.jpg" };
+const itImage = { url: "/images/denaro-it-stock.jpg" };
+const architectureImage = { url: "/images/denaro-architecture-stock.jpg" };
 
 import { Button } from "@/components/ui/button";
 

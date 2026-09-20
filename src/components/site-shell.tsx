@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Mail, Menu, Phone } from "lucide-react";
 
-import logoAsset from "@/assets/denaro-logo.png.asset.json";
+const logoAsset = { url: "/images/denaro-logo.png" };
 
 
 import { Button } from "@/components/ui/button";

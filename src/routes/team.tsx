@@ -4,13 +4,13 @@ import { ArrowUpRight } from "lucide-react";
 import { PageIntro } from "@/components/page-sections";
 import { Button } from "@/components/ui/button";
 
-import gfAsset from "@/assets/team-geschaeftsfuehrer_1.png.asset.json";
-import plAsset from "@/assets/team-projektleiter_1.png.asset.json";
-import recAsset from "@/assets/team-recruiter_1.png.asset.json";
-import hrAsset from "@/assets/team-HR_managerin_1.png.asset.json";
-import mann2Asset from "@/assets/team-mann_2.png.asset.json";
-import frau1Asset from "@/assets/team-frau_1.png.asset.json";
-import frau2Asset from "@/assets/team-frau_2.png.asset.json";
+const gfAsset = { url: "/images/team-geschaeftsfuehrer_1.png" };
+const plAsset = { url: "/images/team-projektleiter_1.png" };
+const recAsset = { url: "/images/team-recruiter_1.png" };
+const hrAsset = { url: "/images/team-HR_managerin_1.png" };
+const mann2Asset = { url: "/images/team-mann_2.png" };
+const frau1Asset = { url: "/images/team-frau_1.png" };
+const frau2Asset = { url: "/images/team-frau_2.png" };
 
 export const Route = createFileRoute("/team")({
   head: () => ({ meta: [

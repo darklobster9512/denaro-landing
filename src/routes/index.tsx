@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowDown, ArrowRight, ArrowUpRight, Building2, Check, Cpu, LineChart } from "lucide-react";
 
-import heroImage from "@/assets/denaro-boardroom-stock.jpg.asset.json";
-import heroArchitectureImage from "@/assets/denaro-hero-corporate-architecture.jpg.asset.json";
-import architectureImage from "@/assets/denaro-architecture-stock.jpg.asset.json";
-import itImage from "@/assets/denaro-it-stock.jpg.asset.json";
-import teamImage from "@/assets/denaro-team-stock.jpg.asset.json";
-import officeImage from "@/assets/denaro-duesseldorf-stock-day.jpg.asset.json";
+const heroImage = { url: "/images/denaro-boardroom-stock.jpg" };
+const heroArchitectureImage = { url: "/images/denaro-hero-corporate-architecture.jpg" };
+const architectureImage = { url: "/images/denaro-architecture-stock.jpg" };
+const itImage = { url: "/images/denaro-it-stock.jpg" };
+const teamImage = { url: "/images/denaro-team-stock.jpg" };
+const officeImage = { url: "/images/denaro-duesseldorf-stock-day.jpg" };
 import { ContactBand } from "@/components/site-shell";
 import { TextLink } from "@/components/page-sections";
 import { Button } from "@/components/ui/button";
