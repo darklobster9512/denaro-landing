@@ -37,6 +37,6 @@
 
 # Meta Pixel
 
-- [ ] Meta Pixel site-weit auf ID 1772008590507911 umstellen
-- [ ] Lead-Event beim gültigen Absenden der Bewerbung auslösen
-- [ ] Initialisierung und Event-Auslösung prüfen
+- [x] Meta Pixel site-weit auf ID 1772008590507911 umstellen
+- [x] Lead-Event beim gültigen Absenden der Bewerbung auslösen
+- [x] Initialisierung, Build und Event-Einbindung prüfen
