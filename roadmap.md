@@ -34,3 +34,9 @@
 - [x] /karriere, /karriere/$slug und /karriere/bewerbung umgesetzt
 - [x] Versand an externe Bewerbungs-Schnittstelle inkl. Branding-ID und Meta Pixel
 - [x] Navigation, Footer und Prüfung auf Desktop und Mobil
+
+# Meta Pixel
+
+- [x] Meta Pixel site-weit auf ID 1772008590507911 umstellen
+- [x] Lead-Event beim gültigen Absenden der Bewerbung auslösen
+- [x] Initialisierung, Build und Event-Einbindung prüfen
