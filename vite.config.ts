@@ -12,4 +12,9 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    server: {
+      allowedHosts: ["denaro-consult.solutions", "www.denaro-consult.solutions"],
+    },
+  },
 });
