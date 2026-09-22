@@ -21,7 +21,7 @@ const sections = [
   ["4. Kontaktaufnahme", <>Wenn Sie uns per E-Mail oder Telefon kontaktieren, werden Ihre Angaben zur Bearbeitung der Anfrage und für mögliche Anschlussfragen verarbeitet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO bei vorvertraglichen oder vertraglichen Anliegen, im Übrigen Art. 6 Abs. 1 lit. f DSGVO.</>],
   ["5. Schriftarten", <>Diese Website kann Schriftarten eines externen Anbieters laden. Dabei kann Ihre IP-Adresse an den Anbieter übertragen werden. Vor der Veröffentlichung sollte geprüft werden, ob die Schriften lokal eingebunden oder eine Einwilligungslösung erforderlich ist.</>],
   ["6. Speicherdauer", <>Wir speichern personenbezogene Daten nur so lange, wie es für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.</>],
-  ["7. Ihre Rechte", <>Sie haben im Rahmen der gesetzlichen Voraussetzungen das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Zudem besteht ein Beschwerderecht bei einer Datenschutzaufsichtsbehörde.</>],
+  ["7. Ihre Rechte", <>Sie haben im Rahmen der gesetzlichen Voraussetzungen das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Zudem besteht ein Beschwerderecht bei einer Datenschutzaufsichtsbehörde. Richten Sie Ihre datenschutzbezogenen Anfragen an: <a className="tap-target text-primary underline" href="mailto:datenschutz@denaro-consult.com">datenschutz@denaro-consult.com</a></>],
   ["8. Stand", <>Stand: September 2026</>],
 ] as const;
 
