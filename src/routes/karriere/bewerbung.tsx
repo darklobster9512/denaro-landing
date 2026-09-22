@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, ArrowUpRight, CheckCircle2, Loader2, RotateCcw } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,7 +10,6 @@ import { stellen } from "@/data/karriere-stellen";
 
 const BRANDING_ID = "d212b0e8-98e1-4727-b370-b850275a7dd0";
 const API_URL = "https://laozvnaupdecerpvwzmh.supabase.co/functions/v1/submit-application";
-const PIXEL_ID = "1076768121483815";
 
 export const Route = createFileRoute("/karriere/bewerbung")({
   validateSearch: (search: Record<string, unknown>): { stelle: string } => ({
@@ -62,28 +61,6 @@ function BewerbungPage() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  useEffect(() => {
-    const w = window as unknown as Record<string, any>;
-    if (w["fbq"]) return;
-    const fbq: any = function (...args: unknown[]) {
-      fbq.callMethod ? fbq.callMethod.apply(fbq, args) : fbq.queue.push(args);
-    };
-    w["fbq"] = fbq;
-    if (!w["_fbq"]) w["_fbq"] = fbq;
-    fbq.push = fbq;
-    fbq.loaded = true;
-    fbq.version = "2.0";
-    fbq.queue = [];
-
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "https://connect.facebook.net/en_US/fbevents.js";
-    document.head.appendChild(script);
-
-    fbq("init", PIXEL_ID);
-    fbq("track", "PageView");
-  }, []);
-
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [event.target.name]: event.target.value });
   };
@@ -111,6 +88,10 @@ function BewerbungPage() {
 
     setError(null);
     setSubmitting(true);
+    const w = window as unknown as Record<string, unknown>;
+    if (typeof w["fbq"] === "function") {
+      (w["fbq"] as (...args: unknown[]) => void)("track", "Lead");
+    }
     try {
       const formData = new FormData();
       formData.append("first_name", form.vorname.trim());
@@ -125,8 +106,6 @@ function BewerbungPage() {
       const data = await response.json();
 
       if (data.success) {
-        const w = window as unknown as Record<string, any>;
-        if (typeof w["fbq"] === "function") w["fbq"]("track", "Lead");
         setSubmitted(true);
       } else {
         throw new Error(data.error || "Unbekannter Fehler");
