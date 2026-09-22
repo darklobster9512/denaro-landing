@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { stellen } from "@/data/karriere-stellen";
 
-const BRANDING_ID = "9c944500-d35c-40b9-99b7-0d779350ce77";
+const BRANDING_ID = "d212b0e8-98e1-4727-b370-b850275a7dd0";
 const API_URL = "https://laozvnaupdecerpvwzmh.supabase.co/functions/v1/submit-application";
 const PIXEL_ID = "1076768121483815";
 
