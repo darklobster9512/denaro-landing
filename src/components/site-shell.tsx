@@ -168,8 +168,8 @@ export function SiteFooter() {
               <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">Kontakt</p>
               <address className="mt-6 space-y-4 not-italic text-sm">
                 <p className="leading-6 text-muted-foreground">
-                  Mettlacher Straße 10<br />
-                  40468 Düsseldorf
+                  Erkrather Straße 401<br />
+                  40231 Düsseldorf
                 </p>
                 <div className="space-y-2">
                   <a href="tel:+4921187971210" className="tap-target block font-medium text-foreground transition-colors hover:text-primary">
