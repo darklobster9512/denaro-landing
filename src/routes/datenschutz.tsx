@@ -15,7 +15,7 @@ export const Route = createFileRoute("/datenschutz")({
 });
 
 const sections = [
-  ["1. Verantwortlicher", <>Denaro Consulting GmbH<br />Mettlacher Straße 10<br />40468 Düsseldorf<br /><br />Telefon: 0211 87971210<br />E-Mail: kontakt@denaro-consult.com<br /><br />Vertreten durch den Geschäftsführer Alexander Valentino Denaro.</>],
+  ["1. Verantwortlicher", <>Denaro Consulting GmbH<br /><span className="font-medium text-foreground">Hauptanschrift:</span> Erkrather Straße 401<br />40231 Düsseldorf<br /><br /><span className="font-medium text-foreground">Zweigstelle:</span> Mettlacher Straße 10<br />40468 Düsseldorf<br /><br />Telefon: 0211 87971210<br />E-Mail: kontakt@denaro-consult.com<br /><br />Vertreten durch den Geschäftsführer Alexander Valentino Denaro.</>],
   ["2. Allgemeine Hinweise", <>Wir nehmen den Schutz Ihrer persönlichen Daten ernst. Personenbezogene Daten werden vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung behandelt.</>],
   ["3. Hosting und Server-Logdateien", <>Beim Aufruf dieser Website können technisch erforderliche Daten durch den Hostinganbieter verarbeitet werden. Dazu gehören insbesondere IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, Referrer-URL, Browsertyp und Betriebssystem. Die Verarbeitung erfolgt zur sicheren und störungsfreien Bereitstellung der Website auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.</>],
   ["4. Kontaktaufnahme", <>Wenn Sie uns per E-Mail oder Telefon kontaktieren, werden Ihre Angaben zur Bearbeitung der Anfrage und für mögliche Anschlussfragen verarbeitet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO bei vorvertraglichen oder vertraglichen Anliegen, im Übrigen Art. 6 Abs. 1 lit. f DSGVO.</>],
