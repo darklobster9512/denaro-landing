@@ -101,7 +101,7 @@ export function ServicesGrid({ detailed = false }: { detailed?: boolean }) {
 export function ContactDetails() {
   const items = [
     { icon: MapPin, label: "Hauptanschrift", value: <>Erkrather Straße 401<br />40231 Düsseldorf</> },
-    { icon: Phone, label: "Telefon", value: <a href="tel:+4921187971210">0211 87971210</a> },
+    { icon: Phone, label: "Telefon", value: <a href="tel:+4921197533736">0211 97533736</a> },
     { icon: Mail, label: "E-Mail", value: <a className="break-all" href="mailto:kontakt@denaro-consult.com">kontakt@denaro-consult.com</a> },
   ];
   return (
