@@ -74,7 +74,7 @@ export function SiteHeader() {
               ))}
             </nav>
             <div className="mt-8 flex flex-col text-sm">
-              <a className="flex min-h-12 items-center gap-3 font-semibold text-primary" href="tel:+4921187971210"><Phone className="size-4 shrink-0" />0211 87971210</a>
+              <a className="flex min-h-12 items-center gap-3 font-semibold text-primary" href="tel:+4921197533736"><Phone className="size-4 shrink-0" />0211 97533736</a>
               <a className="flex min-h-12 items-center gap-3 break-all font-semibold text-primary" href="mailto:kontakt@denaro-consult.com"><Mail className="size-4 shrink-0" />kontakt@denaro-consult.com</a>
             </div>
             <SheetClose asChild>
@@ -172,8 +172,8 @@ export function SiteFooter() {
                   40231 Düsseldorf
                 </p>
                 <div className="space-y-2">
-                  <a href="tel:+4921187971210" className="tap-target block font-medium text-foreground transition-colors hover:text-primary">
-                    0211 87971210
+                  <a href="tel:+4921197533736" className="tap-target block font-medium text-foreground transition-colors hover:text-primary">
+                    0211 97533736
                   </a>
                   <a
                     href="mailto:kontakt@denaro-consult.com"
